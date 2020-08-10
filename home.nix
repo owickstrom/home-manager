@@ -38,13 +38,18 @@
       lla = "ls -la";
       g = "git";
       gs = "git status";
+      gaa = "git add -a";
       e = "eval $EDITOR";
     };
     initExtra = ''
-    if [ -e ~/.nix-profile/etc/profile.d/nix.sh ]; then
-      . ~/.nix-profile/etc/profile.d/nix.sh;
-      export NIX_PATH=$HOME/.nix-defexpr/channels''${NIX_PATH:+:}$NIX_PATH
-    fi # added by Nix installer
+      if [ -e ~/.nix-profile/etc/profile.d/nix.sh ]; then
+        . ~/.nix-profile/etc/profile.d/nix.sh;
+        export NIX_PATH=$HOME/.nix-defexpr/channels''${NIX_PATH:+:}$NIX_PATH
+      fi # added by Nix installer
+
+      function gc {
+        git commit -m "$(join ' ' $@)"
+      }
     '';
   };
 
