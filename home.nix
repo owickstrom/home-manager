@@ -38,7 +38,9 @@
       lla = "ls -la";
       g = "git";
       gs = "git status";
-      gaa = "git add -a";
+      gaa = "git add --all";
+      gd = "git diff";
+      gdc = "git diff --cached";
       e = "eval $EDITOR";
     };
     initExtra = ''
@@ -83,6 +85,13 @@
     vimdiffAlias = true;
     plugins = with pkgs.vimPlugins; [
       awesome-vim-colorschemes
+      vim-trailing-whitespace
+      editorconfig-vim
+      python-mode
+      haskell-vim
+      vim-json
+      vim-javascript
+      vim-jsx
       vim-nix
     ];
     extraConfig = ''
