@@ -19,7 +19,15 @@
   # changes in each release.
   home.stateVersion = "20.09";
 
-  home.packages = with pkgs; [ htop cachix ghcid tmux jq nixfmt ];
+  home.packages = with pkgs; [
+    htop
+    cachix
+    ghcid
+    tmux
+    jq
+    nixfmt
+    gitAndTools.hub
+  ];
 
   programs.bash = {
     enable = true;
@@ -41,6 +49,8 @@
         . ~/.nix-profile/etc/profile.d/nix.sh;
         export NIX_PATH=$HOME/.nix-defexpr/channels''${NIX_PATH:+:}$NIX_PATH
       fi # added by Nix installer
+
+      export XDG_DATA_DIRS=$HOME/.nix-profile/share:/usr/local/share:/usr/share
     '';
   };
 
@@ -48,8 +58,9 @@
     enable = true;
     userName = "owickstrom";
     userEmail = "oskar@wickstrom.tech";
-    ignores = [ ];
+    ignores = [ ".vscode" ];
     aliases = {
+      br = "branch";
       co = "checkout";
       ci = "commit";
       cp = "commit -p";
@@ -183,9 +194,9 @@
     userSettings = {
       "update.channel" = "none";
       "[nix]"."editor.tabSize" = 2;
-      "workbench.colorTheme"= "Atom One Light";
-      "workbench.preferredLightColorTheme"= "Atom One Light";
-      "workbench.preferredDarkColorTheme"= "Atom One Dark";
+      "workbench.colorTheme" = "Atom One Dark";
+      "workbench.preferredLightColorTheme" = "Atom One Light";
+      "workbench.preferredDarkColorTheme" = "Atom One Dark";
 
     };
   };
