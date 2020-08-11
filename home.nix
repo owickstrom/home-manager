@@ -1,4 +1,12 @@
 { config, pkgs, ... }: {
+
+  imports = [
+    ./bash.nix
+    ./git.nix
+    ./neovim.nix
+    ./tmux.nix
+    ./vscode.nix
+  ];
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
@@ -29,179 +37,6 @@
     gitAndTools.hub
   ];
 
-  programs.bash = {
-    enable = true;
-    historyIgnore = [ "l" "ls" "cd" "exit" ];
-    historyControl = [ "erasedups" ];
-    enableAutojump = true;
-    shellAliases = {
-      ll = "ls -l";
-      lla = "ls -la";
-      g = "git";
-      gs = "git status";
-      gaa = "git add --all";
-      gd = "git diff";
-      gdc = "git diff --cached";
-      e = "eval $EDITOR";
-    };
-    initExtra = ''
-      if [ -e ~/.nix-profile/etc/profile.d/nix.sh ]; then
-        . ~/.nix-profile/etc/profile.d/nix.sh;
-        export NIX_PATH=$HOME/.nix-defexpr/channels''${NIX_PATH:+:}$NIX_PATH
-      fi # added by Nix installer
-
-      export XDG_DATA_DIRS=$HOME/.nix-profile/share:/usr/local/share:/usr/share
-    '';
-  };
-
-  programs.git = {
-    enable = true;
-    userName = "owickstrom";
-    userEmail = "oskar@wickstrom.tech";
-    ignores = [ ".vscode" ];
-    aliases = {
-      br = "branch";
-      co = "checkout";
-      ci = "commit";
-      cp = "commit -p";
-      s = "status";
-      st = "status";
-      d = "diff";
-      pr = "pull --rebase";
-      ps = "push";
-      l =
-        "log --graph --pretty='%Cred%h%Creset - %C(bold blue)<%an>%Creset %s%C(yellow)%d%Creset %Cgreen(%cr)' --abbrev-commit --date=relative";
-    };
-    extraConfig = {
-      core.editor = "nvim";
-      credential.helper = "store --file ~/.git-credentials";
-      pull.rebase = "false";
-    };
-  };
-
-  programs.neovim = {
-    enable = true;
-    viAlias = true;
-    vimAlias = true;
-    vimdiffAlias = true;
-    plugins = with pkgs.vimPlugins; [
-      awesome-vim-colorschemes
-      vim-trailing-whitespace
-      editorconfig-vim
-      python-mode
-      haskell-vim
-      vim-json
-      vim-javascript
-      vim-nix
-    ];
-    extraConfig = ''
-      " General
-      set nocompatible            " get rid of Vi compatibility mode. SET FIRST!
-      filetype plugin indent on   " filetype detection[ON] plugin[ON] indent[ON]
-      syntax enable               " enable syntax highlighting (previously syntax on).
-
-      " Navigation
-      set scrolloff=3             " some lines around scroll for context
-
-      " Cursor/Line
-      set number
-      set colorcolumn=80          " ruler at 80 chars width
-      set cursorline              " highlight the current line
-
-      " Status/History
-      set history=200             " remember a lot of stuff
-      set ruler                   " Always show info along bottom.
-      set cmdheight=1
-
-      " Scrolling
-      set ttyfast
-
-      " Files
-      set autoread                   " auto-reload files changed on disk
-      set updatecount=0              " disable swap files
-      set wildmode=longest,list,full " :e completion mode
-
-      " Vimdiff
-      set diffopt=filler,vertical
-
-      " Conceal (disabled by default)
-      set conceallevel=0
-
-      " Wrapping
-      set nowrap                  " don't wrap text
-
-      " Leader
-      let mapleader = ','
-      let maplocalleader = ','
-
-      " Make F1 work like Escape.
-      map <F1> <Esc>
-      imap <F1> <Esc>
-
-      " Mouse issue (https://github.com/neovim/neovim/wiki/Following-HEAD#20170403)
-      set mouse=a
-
-      " Use system clipboard for yanks.
-      set clipboard+=unnamedplus
-
-      " Use ,t for 'jump to tag'.
-      nnoremap <Leader>t <C-]>
-
-      " Allow hidden windows
-      set hidden
-
-      set termguicolors
-      colorscheme paramount
-    '';
-  };
-
-  programs.tmux = {
-    enable = true;
-    shortcut = "C-]";
-    baseIndex = 1; # Widows numbers begin with 1
-    keyMode = "vi";
-    customPaneNavigationAndResize = true;
-    aggressiveResize = true;
-    historyLimit = 100000;
-    resizeAmount = 5;
-    escapeTime = 0;
-    terminal = "screen-256color";
-
-    extraConfig = ''
-      # enable terminal compability
-      set-option -ga terminal-overrides ",screen-256color:Tc"
-
-      # Better splitting commands.
-      unbind %
-      bind | split-window -h
-      bind - split-window -v
-
-      # Subtle bottom bar color.
-      set -g status-bg colour7
-      set -g status-fg colour0
-    '';
-
-  };
-
-  programs.vscode = {
-    enable = true;
-    haskell = {
-      enable = true;
-      hie.enable = false;
-    };
-    extensions = pkgs.vscode-utils.extensionsFromVscodeMarketplace
-      (import ./vscode-extensions.nix).extensions;
-    userSettings = {
-      "update.channel" = "none";
-      "[nix]"."editor.tabSize" = 2;
-      "workbench.colorTheme" = "Atom One Dark";
-      "workbench.preferredLightColorTheme" = "Atom One Light";
-      "workbench.preferredDarkColorTheme" = "Atom One Dark";
-
-    };
-  };
-
-  services.dropbox = { enable = true; };
-
+  services.dropbox.enable = true;
   services.lorri.enable = true;
 }
