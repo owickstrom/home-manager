@@ -32,8 +32,8 @@
   {
     name = "haskell";
     publisher = "haskell";
-    version = "1.0.1";
-    sha256 = "0l82cp0jhgcwbczrms3a31wlgaxnxw6kslhv630agdr14xy6p1y1";
+    version = "1.1.0";
+    sha256 = "1wg06lyk0qn9jd6gi007sg7v0z9z8gwq7x2449d4ihs9n3w5l0gb";
   }
   {
     name = "language-haskell";

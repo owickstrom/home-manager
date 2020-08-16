@@ -1,12 +1,6 @@
 { config, pkgs, ... }: {
 
-  imports = [
-    ./bash.nix
-    ./git.nix
-    ./neovim.nix
-    ./tmux.nix
-    ./vscode.nix
-  ];
+  imports = [ ./bash.nix ./git.nix ./neovim.nix ./tmux.nix ./vscode.nix ];
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
@@ -35,7 +29,13 @@
     jq
     nixfmt
     gitAndTools.hub
+
+    # Fonts
+    iosevka
+    cascadia-code
   ];
+
+  fonts.fontconfig.enable = true;
 
   services.dropbox.enable = true;
   services.lorri.enable = true;

@@ -11,11 +11,11 @@
       # Basics
       "update.channel" = "none";
       "[nix]"."editor.tabSize" = 2;
-      # Sundial
-      "window.autoDetectColorScheme" = "false";
-      "sundial.latitude" = "";
-      "sundial.longitude" = "55.815";
-      "workbench.colorTheme" = "13.0227";
+      "editor.fontFamily" = "Cascadia Code";
+      "editor.fontSize" = 13;
+      # Theme
+      "window.autoDetectColorScheme" = "true";
+      "workbench.colorTheme" = "Atom One Dark";
       "workbench.preferredLightColorTheme" = "Atom One Light";
       "workbench.preferredDarkColorTheme" = "Atom One Dark";
       # Terminal
