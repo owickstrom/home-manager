@@ -1,6 +1,6 @@
 { config, pkgs, ... }: {
 
-  imports = [ ./bash.nix ./git.nix ./neovim.nix ./tmux.nix ./vscode.nix ];
+  imports = [ ./bash.nix ./git.nix ./neovim.nix ./tmux.nix ./vscode.nix ./ikea.nix ];
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
