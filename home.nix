@@ -29,6 +29,7 @@
     jq
     nixfmt
     gitAndTools.hub
+    direnv
 
     # Fonts
     iosevka
@@ -36,7 +37,6 @@
   ];
 
   fonts.fontconfig.enable = true;
-
   services.dropbox.enable = true;
   services.lorri.enable = true;
 }

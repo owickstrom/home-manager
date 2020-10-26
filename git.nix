@@ -3,7 +3,7 @@
     enable = true;
     userName = "owickstrom";
     userEmail = "oskar@wickstrom.tech";
-    ignores = [ ".vscode" ];
+    ignores = [ ".vscode" ".envrc" ];
     aliases = {
       br = "branch";
       co = "checkout";
