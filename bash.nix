@@ -21,9 +21,10 @@
         export NIX_PATH=$HOME/.nix-defexpr/channels''${NIX_PATH:+:}$NIX_PATH
       fi # added by Nix installer
 
-      export XDG_DATA_DIRS=$HOME/.nix-profile/share:/usr/local/share:/usr/share
-
       eval "$(direnv hook bash)"
+    '';
+    profileExtra = ''
+      export XDG_DATA_DIRS=$HOME/.nix-profile/share:/usr/local/share:/usr/share
     '';
   };
 }

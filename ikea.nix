@@ -2,10 +2,14 @@
   home.packages = with pkgs; [
     slack
     adoptopenjdk-hotspot-bin-11
-    jetbrains.idea-community
+    jetbrains.idea-ultimate
     google-cloud-sdk
-    docker
+    nodejs-14_x
   ];
 
   programs.chromium.enable = true;
+
+  xdg.enable = true;
+  xdg.mime.enable = true;
+  targets.genericLinux.enable = true;
 }
