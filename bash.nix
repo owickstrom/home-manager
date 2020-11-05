@@ -13,6 +13,8 @@
       gaa = "git add --all";
       gd = "git diff";
       gdc = "git diff --cached";
+      gps = "git push";
+      gh = "git log --graph --pretty=oneline --abbrev-commit";
       e = "eval $EDITOR";
     };
     initExtra = ''
@@ -20,6 +22,8 @@
         . ~/.nix-profile/etc/profile.d/nix.sh;
         export NIX_PATH=$HOME/.nix-defexpr/channels''${NIX_PATH:+:}$NIX_PATH
       fi # added by Nix installer
+
+      export EDITOR=vim
 
       eval "$(direnv hook bash)"
     '';

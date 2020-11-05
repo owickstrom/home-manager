@@ -21,6 +21,14 @@
   # changes in each release.
   home.stateVersion = "20.09";
 
+  fonts.fontconfig.enable = true;
+  services.dropbox.enable = true;
+  services.lorri.enable = true;
+
+  xdg.enable = true;
+  xdg.mime.enable = true;
+  targets.genericLinux.enable = true;
+
   home.packages = with pkgs; [
     htop
     cachix
@@ -30,13 +38,10 @@
     nixfmt
     gitAndTools.hub
     direnv
+    zoom-us
 
     # Fonts
     iosevka
     cascadia-code
   ];
-
-  fonts.fontconfig.enable = true;
-  services.dropbox.enable = true;
-  services.lorri.enable = true;
 }
