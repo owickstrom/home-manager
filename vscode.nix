@@ -26,5 +26,23 @@
         "-workbench.action.quickOpen"
       ];
     };
+    keybindings = [
+      {
+        key = "alt+n";
+        command = "editor.action.marker.next";
+      }
+      {
+        key = "alt+shift+n";
+        command = "editor.action.marker.nextInFiles";
+      }
+      {
+        key = "alt+p";
+        command = "editor.action.marker.prev";
+      }
+      {
+        key = "alt+shift+p";
+        command = "editor.action.marker.prevInFiles";
+      }
+    ];
   };
 }

@@ -4,7 +4,6 @@
     enable = true;
     historyIgnore = [ "l" "ls" "cd" "exit" ];
     historyControl = [ "erasedups" ];
-    enableAutojump = true;
     shellAliases = {
       ll = "ls -l";
       lla = "ls -la";
@@ -31,4 +30,6 @@
       export XDG_DATA_DIRS=$HOME/.nix-profile/share:/usr/local/share:/usr/share
     '';
   };
+
+  programs.autojump.enable = true;
 }
