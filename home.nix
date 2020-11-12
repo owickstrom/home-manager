@@ -1,6 +1,6 @@
 { config, pkgs, ... }: {
 
-  imports = [ ./bash.nix ./git.nix ./neovim.nix ./tmux.nix ./vscode.nix ./media.nix ./passwords.nix ./ikea.nix ];
+  imports = [ ./bash.nix ./git.nix ./neovim.nix ./tmux.nix ./vscode.nix ./media.nix ./passwords.nix ./ikea.nix ./emacs.nix ];
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
@@ -35,6 +35,7 @@
     ghcid
     tmux
     jq
+    ripgrep
     nixfmt
     gitAndTools.hub
     direnv

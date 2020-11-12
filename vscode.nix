@@ -16,7 +16,7 @@
       # Theme
       "window.autoDetectColorScheme" = "true";
       "workbench.colorTheme" = "Atom One Dark";
-      "workbench.preferredLightColorTheme" = "Atom One Light";
+      "workbench.preferredLightColorTheme" = "Atom One Dark";
       "workbench.preferredDarkColorTheme" = "Atom One Dark";
       # Terminal
       "terminal.integrated.allowChords" = "false";
