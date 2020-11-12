@@ -14,6 +14,9 @@
         rg
         rust-mode
         company-lsp
+        lsp-mode
+        lsp-ui
+        lsp-haskell
         mixed-pitch
         company
         nix-mode
@@ -30,7 +33,6 @@
         fstar-mode
         psc-ide
         purescript-mode
-        flycheck-haskell
         haskell-mode
         markdown-mode
         tuareg

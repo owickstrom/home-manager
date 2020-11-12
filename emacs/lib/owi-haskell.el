@@ -1,12 +1,7 @@
 (require 'owi-package-management)
-(require 'owi-flycheck)
 (require 'owi-projectile)
 (require 'owi-evil)
 (require 'owi-tasty-run)
-
-(use-package flycheck-haskell
-  :config
-  (add-to-list 'flycheck-disabled-checkers 'haskell-stack-ghc))
 
 (use-package haskell-mode
   :init
@@ -37,11 +32,12 @@
 	          (lambda ()
 	            (setq projectile-tags-command "fast-tags -Re --exclude=.stack-work --exclude=dist-newstyle .")
 	            (haskell-auto-insert-module-template)
-              (flycheck-mode)
+              (lsp)
 	            (paredit-mode)
               ;; (add-to-list 'haskell-compilation-error-regexp-alist
               ;;              '("✗ .*? failed at \\(.*?\\):\\([0-9]+\\):\\([0-9]+\\)" 1 2 3 2 nil))
               ))
+  (add-hook 'haskell-literate-mode-hook #'lsp)
   )
 
 (evil-set-initial-state 'interactive-haskell-mode 'emacs)
@@ -53,5 +49,16 @@
   (when-let
       (default-directory (locate-dominating-file default-directory "stack.yaml"))
     (call-process "stack2cabal")))
+
+(use-package lsp
+  :bind
+  (("C-S-i" . lsp-format-buffer)
+   ("C-c f" . lsp-ui-sideline-apply-code-actions)))
+
+(use-package lsp-ui)
+
+(use-package lsp-haskell
+  :config
+  (setq lsp-haskell-process-path-hie "haskell-language-server-wrapper"))
 
 (provide 'owi-haskell)
