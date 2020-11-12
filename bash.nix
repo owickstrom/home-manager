@@ -13,6 +13,7 @@
       gd = "git diff";
       gdc = "git diff --cached";
       gps = "git push";
+      gpl = "git pull";
       gh = "git log --graph --pretty=oneline --abbrev-commit";
       e = "eval $EDITOR";
     };
