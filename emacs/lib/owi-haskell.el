@@ -55,7 +55,15 @@
   (("C-S-i" . lsp-format-buffer)
    ("C-c f" . lsp-ui-sideline-apply-code-actions)))
 
-(use-package lsp-ui)
+(use-package lsp-ui
+  :bind
+  (("C-c d" . lsp-ui-doc-glance))
+
+  :config
+  (add-hook 'lsp-ui-doc-mode-hook
+            (lambda ()
+              (when lsp-ui-doc-mode
+                (remove-hook 'post-command-hook #'lsp-ui-doc--make-request t)))))
 
 (use-package lsp-haskell
   :config
