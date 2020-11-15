@@ -11,7 +11,7 @@
   (setq-default haskell-process-log t)
   (setq-default haskell-process-args-ghci '("-ferror-spans" "-fshow-loaded-modules"))
   (setq-default haskell-font-lock-symbols nil)
-  (setq-default haskell-stylish-on-save t)
+  (setq-default haskell-stylish-on-save nil)
 
   :mode
   ("\\.l?hs$" . haskell-mode)
