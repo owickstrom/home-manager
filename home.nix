@@ -13,8 +13,10 @@
   ];
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+  news.display = "silent";
 
   nixpkgs.config.allowUnfree = true;
+  nixpkgs.overlays = [ (import pkgs/electronmail.nix) ];
 
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
@@ -50,6 +52,7 @@
     gitAndTools.hub
     direnv
     zoom-us
+    electronmail
 
     # Fonts
     iosevka
