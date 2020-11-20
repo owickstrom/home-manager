@@ -2,6 +2,7 @@
 
 (use-package nix-mode
   :bind
-  (("C-S-i" . nix-format-buffer)))
+  (:map nix-mode-map
+        ("C-S-i" . nix-format-buffer)))
 
 (provide 'owi-nix)

@@ -53,6 +53,7 @@
     direnv
     zoom-us
     electronmail
+    tree
 
     # Fonts
     iosevka

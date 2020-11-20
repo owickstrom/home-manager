@@ -42,6 +42,7 @@
         minimal-theme
         doom-themes
         solaire-mode
+        elpy
       ];
   };
 
