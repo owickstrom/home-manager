@@ -2,8 +2,9 @@
 
 (use-package flycheck
   :bind
-  ("M-p" . flycheck-previous-error)
-  ("M-n" . flycheck-next-error)
+  ((:map flycheck-mode-map)
+   ("M-p" . flycheck-previous-error)
+   ("M-n" . flycheck-next-error))
   )
 
 (provide 'owi-flycheck)

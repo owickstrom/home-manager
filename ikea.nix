@@ -3,7 +3,7 @@
     slack
     adoptopenjdk-hotspot-bin-11
     jetbrains.idea-ultimate
-    google-cloud-sdk
+    # google-cloud-sdk
     nodejs-14_x
   ];
 

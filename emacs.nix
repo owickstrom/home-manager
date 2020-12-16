@@ -43,6 +43,7 @@
         doom-themes
         solaire-mode
         elpy
+        poetry
       ];
   };
 

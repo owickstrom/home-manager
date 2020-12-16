@@ -54,6 +54,10 @@
     zoom-us
     electronmail
     tree
+    vokoscreen
+    vlc
+    ffmpeg
+    signal-desktop
 
     # Fonts
     iosevka
