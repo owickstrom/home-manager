@@ -5,7 +5,9 @@
   (setq elpy-rpc-timeout 10)
 
   :bind
-  (("C-S-i" . elpy-format-code)))
+  ((:map python-mode-map)
+   ("C-S-i" . elpy-format-code)
+   ))
 
 (use-package company
   :init

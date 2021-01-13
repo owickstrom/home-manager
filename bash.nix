@@ -29,6 +29,8 @@
     '';
     profileExtra = ''
       export XDG_DATA_DIRS=$HOME/.nix-profile/share:/usr/local/share:/usr/share
+
+      export PATH=$PATH:$HOME/.local/bin
     '';
   };
 
