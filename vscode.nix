@@ -27,6 +27,7 @@
       ];
       "idris.idrisPath" = "${pkgs.idris2}/bin/idris2";
       "idris.idris2Mode" = true;
+      "emmet.includeLanguages" = { "html-eex" = "html"; };
     };
     keybindings = [
       {

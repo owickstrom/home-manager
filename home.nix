@@ -58,6 +58,7 @@
     vlc
     ffmpeg
     signal-desktop
+    awscli
 
     # Fonts
     iosevka
