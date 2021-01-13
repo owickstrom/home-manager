@@ -58,6 +58,7 @@
     vlc
     ffmpeg
     signal-desktop
+    aws-cli
 
     # Fonts
     iosevka

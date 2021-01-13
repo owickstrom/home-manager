@@ -12,7 +12,7 @@
       "update.channel" = "none";
       "[nix]"."editor.tabSize" = 2;
       "editor.fontFamily" = "Cascadia Code";
-      "editor.fontSize" = 13;
+      "editor.fontSize" = 15;
       # Theme
       "window.autoDetectColorScheme" = "true";
       "workbench.colorTheme" = "Atom One Dark";
@@ -25,6 +25,7 @@
         "-workbench.action.terminal.clear"
         "-workbench.action.quickOpen"
       ];
+      "emmet.includeLanguages" = { "html-eex" = "html"; };
     };
     keybindings = [
       {
