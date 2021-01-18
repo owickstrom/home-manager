@@ -12,7 +12,7 @@
       "update.channel" = "none";
       "[nix]"."editor.tabSize" = 2;
       "editor.fontFamily" = "Cascadia Code";
-      "editor.fontSize" = 15;
+      "editor.fontSize" = 13;
       # Theme
       "window.autoDetectColorScheme" = "true";
       "workbench.colorTheme" = "Atom One Dark";
@@ -28,6 +28,7 @@
       "idris.idrisPath" = "${pkgs.idris2}/bin/idris2";
       "idris.idris2Mode" = true;
       "emmet.includeLanguages" = { "html-eex" = "html"; };
+      "window.menuBarVisibility" = "toggle";
     };
     keybindings = [
       {

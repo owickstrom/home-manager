@@ -10,6 +10,7 @@
     ./passwords.nix
     ./ikea.nix
     ./emacs.nix
+    ./regolith.nix
   ];
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
@@ -41,6 +42,9 @@
   xdg.mime.enable = true;
   targets.genericLinux.enable = true;
 
+  # https://github.com/nix-community/home-manager/issues/354#issuecomment-475803163
+  home.sessionVariables.LOCALES_ARCHIVE = "${pkgs.glibcLocales}/lib/locale/locale-archive";
+
   home.packages = with pkgs; [
     htop
     cachix
@@ -59,6 +63,7 @@
     ffmpeg
     signal-desktop
     awscli
+    google-chrome
 
     # Fonts
     iosevka
