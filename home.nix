@@ -36,7 +36,16 @@
 
   fonts.fontconfig.enable = true;
   services.dropbox.enable = true;
-  services.lorri.enable = true;
+  # services.lorri.enable = true;
+
+  programs.direnv.enable = true;
+  programs.direnv.enableNixDirenvIntegration = true;
+
+    
+  # Make sure to add these to ~/.config/nix/nix.conf:
+  #
+  #   keep-derivations = true
+  #   keep-outputs = true
 
   xdg.enable = true;
   xdg.mime.enable = true;
@@ -54,7 +63,6 @@
     ripgrep
     nixfmt
     gitAndTools.hub
-    direnv
     zoom-us
     electronmail
     tree
@@ -64,6 +72,7 @@
     signal-desktop
     awscli
     google-chrome
+    nix-prefetch-git
 
     # Fonts
     iosevka

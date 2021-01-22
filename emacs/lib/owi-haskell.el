@@ -32,12 +32,12 @@
 	          (lambda ()
 	            (setq projectile-tags-command "fast-tags -Re --exclude=.stack-work --exclude=dist-newstyle .")
 	            (haskell-auto-insert-module-template)
-              (lsp)
+              ;(lsp)
 	            (paredit-mode)
               ;; (add-to-list 'haskell-compilation-error-regexp-alist
               ;;              '("✗ .*? failed at \\(.*?\\):\\([0-9]+\\):\\([0-9]+\\)" 1 2 3 2 nil))
               ))
-  (add-hook 'haskell-literate-mode-hook #'lsp)
+  ;(add-hook 'haskell-literate-mode-hook #'lsp)
   )
 
 (evil-set-initial-state 'interactive-haskell-mode 'emacs)
