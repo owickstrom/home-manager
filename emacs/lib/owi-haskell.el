@@ -32,12 +32,10 @@
 	          (lambda ()
 	            (setq projectile-tags-command "fast-tags -Re --exclude=.stack-work --exclude=dist-newstyle .")
 	            (haskell-auto-insert-module-template)
-              ;(lsp)
 	            (paredit-mode)
               ;; (add-to-list 'haskell-compilation-error-regexp-alist
               ;;              '("✗ .*? failed at \\(.*?\\):\\([0-9]+\\):\\([0-9]+\\)" 1 2 3 2 nil))
               ))
-  ;(add-hook 'haskell-literate-mode-hook #'lsp)
   )
 
 (evil-set-initial-state 'interactive-haskell-mode 'emacs)
@@ -50,23 +48,10 @@
       (default-directory (locate-dominating-file default-directory "stack.yaml"))
     (call-process "stack2cabal")))
 
-(use-package lsp
+(use-package ormolu
+  :hook (haskell-mode . ormolu-format-on-save-mode)
   :bind
-  (("C-S-i" . lsp-format-buffer)
-   ("C-c f" . lsp-ui-sideline-apply-code-actions)))
-
-(use-package lsp-ui
-  :bind
-  (("C-c d" . lsp-ui-doc-glance))
-
-  :config
-  (add-hook 'lsp-ui-doc-mode-hook
-            (lambda ()
-              (when lsp-ui-doc-mode
-                (remove-hook 'post-command-hook #'lsp-ui-doc--make-request t)))))
-
-(use-package lsp-haskell
-  :config
-  (setq lsp-haskell-process-path-hie "haskell-language-server-wrapper"))
+  (:map haskell-mode-map
+        ("C-S-i" . ormolu-format-buffer)))
 
 (provide 'owi-haskell)

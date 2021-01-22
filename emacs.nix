@@ -16,7 +16,7 @@
         company-lsp
         lsp-mode
         lsp-ui
-        lsp-haskell
+        # lsp-haskell
         mixed-pitch
         company
         nix-mode
@@ -44,6 +44,7 @@
         solaire-mode
         elpy
         poetry
+        ormolu
       ];
   };
 
