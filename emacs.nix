@@ -44,6 +44,10 @@
         solaire-mode
         elpy
         poetry
+        elixir-mode
+        smartparens
+        ruby-end
+        web-mode
       ];
   };
 

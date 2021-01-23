@@ -25,6 +25,7 @@
 (require 'owi-python)
 (require 'owi-nix)
 (require 'owi-gradle)
-(require 'owi-emmet)
+(require 'owi-web)
 (require 'owi-typescript)
 (require 'owi-ocaml)
+(require 'owi-elixir)
