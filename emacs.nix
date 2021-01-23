@@ -16,7 +16,7 @@
         company-lsp
         lsp-mode
         lsp-ui
-        lsp-haskell
+        # lsp-haskell
         mixed-pitch
         company
         nix-mode
@@ -48,6 +48,7 @@
         smartparens
         ruby-end
         web-mode
+        ormolu
       ];
   };
 
