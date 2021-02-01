@@ -10,6 +10,7 @@
 
   (setq web-mode-engines-alist
         '(("elixir" . "\\.html\\.eex\\'")))
+  (setq web-mode-markup-indent-offset 2)
   )
 
 (use-package emmet-mode
