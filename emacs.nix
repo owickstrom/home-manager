@@ -41,7 +41,6 @@
         atom-one-dark-theme
         minimal-theme
         doom-themes
-        solaire-mode
         elpy
         poetry
         elixir-mode
@@ -49,6 +48,7 @@
         ruby-end
         web-mode
         ormolu
+        theme-changer
       ];
   };
 

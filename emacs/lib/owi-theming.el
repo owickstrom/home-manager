@@ -20,16 +20,15 @@
 ;; (use-package minimal-theme
 ;;   :ensure t)
 
-(use-package doom-themes
-  :config
-  (load-theme 'doom-challenger-deep)
-  )
+(use-package doom-themes)
 
-(use-package solaire-mode
+(use-package theme-changer
   :after doom-themes
   :config
-  (solaire-global-mode +1)
-  ;(solaire-mode-swap-bg)
+  (setq calendar-location-name "Simrishamn, Sweden") 
+  (setq calendar-latitude 55.55653)
+  (setq calendar-longitude 14.35037)
+  (change-theme 'doom-tomorrow-day 'doom-tomorrow-night)
   )
 
 (provide 'owi-theming)
