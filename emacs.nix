@@ -49,6 +49,7 @@
         ruby-end
         web-mode
         ormolu
+        agda2-mode
       ];
   };
 
