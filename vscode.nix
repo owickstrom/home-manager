@@ -12,7 +12,7 @@
       "update.channel" = "none";
       "[nix]"."editor.tabSize" = 2;
       "editor.fontFamily" = "Cascadia Code";
-      "editor.fontSize" = 13;
+      "editor.fontSize" = 17;
       # Theme
       "window.autoDetectColorScheme" = "true";
       "workbench.colorTheme" = "Atom One Dark";
