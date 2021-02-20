@@ -30,3 +30,4 @@
 (require 'owi-typescript)
 (require 'owi-ocaml)
 (require 'owi-elixir)
+(require 'owi-specstrom)

@@ -28,7 +28,7 @@
   (setq calendar-location-name "Simrishamn, Sweden") 
   (setq calendar-latitude 55.55653)
   (setq calendar-longitude 14.35037)
-  (change-theme 'doom-tomorrow-day 'doom-tomorrow-night)
+  (change-theme 'doom-gruvbox-light 'doom-gruvbox)
   )
 
 (provide 'owi-theming)

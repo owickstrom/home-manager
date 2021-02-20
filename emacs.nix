@@ -49,7 +49,12 @@
         web-mode
         theme-changer
         agda2-mode
+        specstrom-mode
       ];
+
+    overrides = _: _: {
+      specstrom-mode = import ./specstrom-mode.nix { inherit pkgs; };
+    };
   };
 
   home.file.".emacs.d" = {
