@@ -4,7 +4,7 @@
     extraPackages = epkgs:
       with epkgs; [
         magit
-        evil-magit
+        evil-collection
         typescript-mode
         tide
         evil

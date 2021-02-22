@@ -13,4 +13,10 @@
   (evil-set-initial-state 'term-mode 'emacs)
   )
 
+(use-package evil-collection
+  :after evil
+  :ensure t
+  :config
+  (evil-collection-init))
+
 (provide 'owi-evil)
