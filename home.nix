@@ -69,7 +69,6 @@
     vokoscreen
     vlc
     ffmpeg
-    signal-desktop
     awscli
     google-chrome
     nix-prefetch-git
