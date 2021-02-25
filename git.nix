@@ -4,7 +4,7 @@
     enable = true;
     userName = "owickstrom";
     userEmail = "oskar@wickstrom.tech";
-    ignores = [ ".vscode" ".envrc" ];
+    ignores = [ ".vscode" ".envrc" ".direnv" ];
     aliases = {
       br = "branch";
       co = "checkout";
