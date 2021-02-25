@@ -72,6 +72,7 @@
     awscli
     google-chrome
     nix-prefetch-git
+    earlyoom
 
     # Fonts
     iosevka
