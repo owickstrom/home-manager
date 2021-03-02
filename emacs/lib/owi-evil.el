@@ -2,6 +2,10 @@
 (require 'owi-projectile)
 
 (use-package evil
+  :init
+  (setq evil-want-integration t) ;; This is optional since it's already set to t by default.
+  (setq evil-want-keybinding nil)
+
   :config ;; tweak evil after loading it
   (evil-mode)
 
