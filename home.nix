@@ -63,14 +63,11 @@
     ripgrep
     nixfmt
     gitAndTools.hub
-    zoom-us
-    electronmail
     tree
     vokoscreen
     vlc
     ffmpeg
     awscli
-    google-chrome
     nix-prefetch-git
     earlyoom
 
