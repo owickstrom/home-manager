@@ -13,7 +13,7 @@
         projectile
         rg
         rust-mode
-        company-lsp
+        # company-lsp
         lsp-mode
         lsp-ui
         lsp-haskell
