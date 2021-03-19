@@ -70,6 +70,7 @@
     awscli
     nix-prefetch-git
     earlyoom
+    poetry
 
     # Fonts
     iosevka
