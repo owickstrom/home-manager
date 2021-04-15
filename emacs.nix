@@ -50,6 +50,7 @@
         theme-changer
         agda2-mode
         specstrom-mode
+        prop-menu
       ];
 
     overrides = _: _: {
