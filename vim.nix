@@ -1,10 +1,7 @@
 { config, lib, pkgs, ... }:
 {
-  programs.neovim = {
+  programs.vim = {
     enable = true;
-    viAlias = true;
-    vimAlias = true;
-    vimdiffAlias = true;
     plugins = with pkgs.vimPlugins; [
       awesome-vim-colorschemes
       vim-trailing-whitespace

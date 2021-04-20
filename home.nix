@@ -3,7 +3,7 @@
   imports = [
     ./bash.nix
     ./git.nix
-    ./neovim.nix
+    ./vim.nix
     ./tmux.nix
     ./vscode.nix
     ./media.nix
