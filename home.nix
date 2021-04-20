@@ -8,7 +8,7 @@
     ./vscode.nix
     ./media.nix
     ./passwords.nix
-    ./ikea.nix
+    # ./ikea.nix
     ./emacs.nix
     ./regolith.nix
   ];
@@ -65,12 +65,8 @@
     gitAndTools.hub
     tree
     vokoscreen
-    vlc
-    ffmpeg
     awscli
     nix-prefetch-git
-    earlyoom
-    poetry
 
     # Fonts
     iosevka
