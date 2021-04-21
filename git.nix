@@ -19,7 +19,7 @@
         "log --graph --pretty='%Cred%h%Creset - %C(bold blue)<%an>%Creset %s%C(yellow)%d%Creset %Cgreen(%cr)' --abbrev-commit --date=relative";
     };
     extraConfig = {
-      core.editor = "nvim";
+      core.editor = "vim";
       credential.helper = "store --file ~/.git-credentials";
       pull.rebase = "false";
     };
