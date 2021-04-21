@@ -67,6 +67,7 @@
     vokoscreen
     awscli
     nix-prefetch-git
+    chromium
 
     # Fonts
     iosevka
