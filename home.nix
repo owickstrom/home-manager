@@ -61,6 +61,7 @@
     tmux
     jq
     ripgrep
+    xclip
     nixfmt
     gitAndTools.hub
     tree
