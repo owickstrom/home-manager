@@ -16,6 +16,7 @@
       gpl = "git pull";
       gh = "git log --graph --pretty=oneline --abbrev-commit";
       e = "eval $EDITOR";
+      copy-to-clipboard = "xclip -selection clipboard";
     };
     initExtra = ''
       if [ -e ~/.nix-profile/etc/profile.d/nix.sh ]; then
