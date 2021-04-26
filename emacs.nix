@@ -51,12 +51,18 @@
         agda2-mode
         specstrom-mode
         prop-menu
+        vterm
+        vterm-toggle
       ];
 
     overrides = _: _: {
       specstrom-mode = import ./specstrom-mode.nix { inherit pkgs; };
     };
   };
+
+  home.packages = with pkgs; [
+    libvterm
+  ];
 
   home.file.".emacs.d" = {
     source = ./emacs;
