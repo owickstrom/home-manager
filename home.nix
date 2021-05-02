@@ -69,6 +69,7 @@
     awscli
     nix-prefetch-git
     chromium
+    pandoc
 
     # Fonts
     iosevka
