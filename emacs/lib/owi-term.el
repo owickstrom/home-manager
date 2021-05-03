@@ -16,9 +16,9 @@
   (define-key vterm-mode-map [(control return)]   #'vterm-toggle-insert-cd)
 
                                         ;Switch to next vterm buffer
-  (define-key vterm-mode-map (kbd "s-n")   'vterm-toggle-forward)
+  (define-key vterm-mode-map (kbd "M-s-n")   'vterm-toggle-forward)
                                         ;Switch to previous vterm buffer
-  (define-key vterm-mode-map (kbd "s-p")   'vterm-toggle-backward)
+  (define-key vterm-mode-map (kbd "M-s-p")   'vterm-toggle-backward)
   )
 
 (provide 'owi-term)
