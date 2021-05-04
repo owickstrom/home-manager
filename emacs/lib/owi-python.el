@@ -1,25 +1,19 @@
 (require 'owi-package-management)
 
-(use-package elpy
-  :config
-  (setq elpy-rpc-timeout 10)
+(use-package poetry
+  :hook
+  ;; activate poetry-tracking-mode when python-mode is active
+  (python-mode . poetry-tracking-mode)
+  )
 
-  :bind
-  ((:map python-mode-map)
-   ("C-S-i" . elpy-format-code)
-   ))
 
-(use-package company
+(use-package lsp-python-ms
+  :ensure t
+  :hook (python-mode . (lambda ()
+                         (require 'lsp-python-ms)
+                         (lsp)))
   :init
-  (advice-add 'python-mode :before 'elpy-enable)
- )
-
-(use-package flymake
-  :bind
-  ((:map flymake-mode-map)
-   ("M-p" . flymake-goto-prev-error)
-   ("M-n" . flymake-goto-next-error)
-   ))
+  (setq lsp-python-ms-executable (executable-find "python-language-server")))
 
 (use-package poetry
   :config

@@ -17,6 +17,7 @@
         lsp-mode
         lsp-ui
         lsp-haskell
+        lsp-python-ms
         mixed-pitch
         company
         nix-mode
@@ -41,7 +42,6 @@
         atom-one-dark-theme
         minimal-theme
         doom-themes
-        elpy
         poetry
         elixir-mode
         smartparens
@@ -62,6 +62,7 @@
 
   home.packages = with pkgs; [
     libvterm
+    python-language-server
   ];
 
   home.file.".emacs.d" = {

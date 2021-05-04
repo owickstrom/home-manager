@@ -6,7 +6,7 @@ pkgs.emacsPackages.trivialBuild {
   src = "${
       fetchTarball
       "https://github.com/quickstrom/specstrom/archive/60f38a725ba81aecf625ae856441109f1fa122ee.tar.gz"
-    }/emacs";
+    }/editor-support/emacs";
 
   phases = [ "installPhase" ];
 
