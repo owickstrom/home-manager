@@ -1,18 +1,17 @@
 { config, pkgs, lib, ... }: {
 
   imports = [
-    # ./bash.nix
+    ./yabai.nix
+    ./skhd.nix
+
+    ./bash.nix
     ./git.nix
     ./vim.nix
     ./tmux.nix
 
-    # ./vscode.nix
-    # ./media.nix
-    # ./passwords.nix
     # ./ikea.nix
 
     ./emacs.nix
-    # ./regolith.nix
   ];
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
@@ -37,8 +36,6 @@
   home.stateVersion = "20.09";
 
   fonts.fontconfig.enable = true;
-  # services.dropbox.enable = true;
-  # services.lorri.enable = true;
 
   programs.direnv.enable = true;
   programs.direnv.enableNixDirenvIntegration = true;
@@ -47,13 +44,6 @@
   #
   #   keep-derivations = true
   #   keep-outputs = true
-
-  # xdg.enable = true;
-  # xdg.mime.enable = true;
-  # targets.genericLinux.enable = true;
-
-  # https://github.com/nix-community/home-manager/issues/354#issuecomment-475803163
-  # home.sessionVariables.LOCALES_ARCHIVE = "${pkgs.glibcLocales}/lib/locale/locale-archive";
 
   home.packages = with pkgs; [
     htop
@@ -79,7 +69,6 @@
       app_folder=$(echo ~/Applications);
       
       for app in $(ls "$genProfilePath/home-path/Applications"); do
-        echo $app
         $DRY_RUN_CMD rm -f $app_folder/$app
         $DRY_RUN_CMD osascript -e "tell app \"Finder\"" -e "make new alias file at POSIX file \"$app_folder\" to POSIX file \"$genProfilePath/home-path/Applications/$app\"" -e "set name of result to \"$app\"" -e "end tell"
       done

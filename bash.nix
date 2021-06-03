@@ -24,6 +24,9 @@
         export NIX_PATH=$HOME/.nix-defexpr/channels''${NIX_PATH:+:}$NIX_PATH
       fi # added by Nix installer
 
+      source $HOME/.nix-profile/share/bash-completion/completions/git-prompt.sh
+      PS1='\[\033[0;31m\]\w\[\033[0;32m\]$(__git_ps1)\[\e[0m\]$ '
+
       export EDITOR=vim
 
       eval "$(direnv hook bash)"
