@@ -1,6 +1,8 @@
 { config, lib, pkgs, ... }: {
   programs.emacs = {
     enable = true;
+    package = pkgs.emacs;
+
     extraPackages = epkgs:
       with epkgs; [
         magit
@@ -60,10 +62,11 @@
     };
   };
 
-  home.packages = with pkgs; [
-    libvterm
-    python-language-server
-  ];
+  home.packages = with pkgs;
+    [
+      # libvterm
+      # python-language-server
+    ];
 
   home.file.".emacs.d" = {
     source = ./emacs;
