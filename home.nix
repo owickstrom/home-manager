@@ -4,14 +4,14 @@
     ./yabai.nix
     ./skhd.nix
 
-    ./bash.nix
+    ./zsh.nix
     ./git.nix
     ./vim.nix
     ./tmux.nix
 
     # ./ikea.nix
 
-    ./emacs.nix
+    # ./emacs.nix
   ];
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
@@ -22,8 +22,8 @@
 
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
-  home.username = "oswic";
-  home.homeDirectory = "/Users/oswic";
+  home.username = "owi";
+  home.homeDirectory = "/Users/owi";
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
@@ -58,7 +58,7 @@
     tree
     awscli
     nix-prefetch-git
-    # pandoc
+    pandoc
 
     # Fonts
     iosevka
