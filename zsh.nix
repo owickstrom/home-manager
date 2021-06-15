@@ -37,6 +37,13 @@
       [ -f "/opt/homebrew/bin/brew" ] && eval "$(/opt/homebrew/bin/brew shellenv)"
 
       export PATH=$PATH:$HOME/.local/bin
+
+      # If you need to have llvm first in your PATH, run:
+      export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
+
+      # For compilers to find llvm you may need to set:
+      export LDFLAGS="-L/opt/homebrew/opt/llvm/lib"
+      export CPPFLAGS="-I/opt/homebrew/opt/llvm/include"
     '';
   };
 

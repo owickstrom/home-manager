@@ -59,6 +59,7 @@
     awscli
     nix-prefetch-git
     pandoc
+    poetry
 
     # Fonts
     iosevka
