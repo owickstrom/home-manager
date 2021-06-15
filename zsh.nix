@@ -1,6 +1,7 @@
 { config, lib, pkgs, ... }:
 {
   programs.zsh = {
+    defaultKeymap = "emacs";
     enable = true;
     enableAutosuggestions = true;
     enableCompletion = true;
