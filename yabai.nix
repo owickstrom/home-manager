@@ -14,6 +14,8 @@
     yabai -m config mouse_action2 resize
 
     yabai -m space --layout bsp
+
     yabai -m rule --add app=Emacs manage=on
+    yabai -m rule --add app="^System Preferences$" manage=off
   '';
 }

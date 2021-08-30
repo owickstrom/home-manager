@@ -10,8 +10,6 @@
     ./tmux.nix
 
     # ./ikea.nix
-
-    # ./emacs.nix
   ];
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
@@ -38,7 +36,7 @@
   fonts.fontconfig.enable = true;
 
   programs.direnv.enable = true;
-  programs.direnv.enableNixDirenvIntegration = true;
+  programs.direnv.nix-direnv.enable = true;
 
   # Make sure to add these to ~/.config/nix/nix.conf:
   #
@@ -58,8 +56,10 @@
     tree
     awscli
     nix-prefetch-git
-    pandoc
+    # pandoc
     poetry
+    shellcheck
+    rustup
 
     # Fonts
     iosevka
