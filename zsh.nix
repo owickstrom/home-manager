@@ -19,16 +19,18 @@
       gh = "git log --graph --pretty=oneline --abbrev-commit";
       e = "eval $EDITOR";
       copy-to-clipboard = "xclip -selection clipboard";
+      vim = "nvim";
     };
-    initExtra = ''
+    envExtra = ''
       if [ -e ~/.nix-profile/etc/profile.d/nix.sh ]; then
         . ~/.nix-profile/etc/profile.d/nix.sh;
         export NIX_PATH=$HOME/.nix-defexpr/channels''${NIX_PATH:+:}$NIX_PATH
       fi # added by Nix installer
 
-      export EDITOR=vim
-
       [ -f "/Users/owi/.ghcup/env" ] && source "/Users/owi/.ghcup/env" # ghcup-env
+    '';
+    initExtra = ''
+      export EDITOR=vim
 
       eval "$(direnv hook zsh)"
     '';

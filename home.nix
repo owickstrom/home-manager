@@ -60,9 +60,7 @@
     poetry
     shellcheck
     rustup
-
-    # Fonts
-    iosevka
+    nodejs
   ];
 
   home.activation = {
