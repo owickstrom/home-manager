@@ -1,5 +1,4 @@
-{ config, lib, pkgs, ... }:
-{
+{ config, lib, pkgs, ... }: {
   programs.zsh = {
     defaultKeymap = "emacs";
     enable = true;
@@ -18,6 +17,7 @@
       gpl = "git pull";
       gh = "git log --graph --pretty=oneline --abbrev-commit";
       e = "eval $EDITOR";
+      ec = "emacsclient -nc";
       copy-to-clipboard = "xclip -selection clipboard";
       vim = "nvim";
     };
@@ -31,6 +31,15 @@
     '';
     initExtra = ''
       export EDITOR=vim
+
+      # For home-manager
+      export NIX_PATH=$HOME/.nix-defexpr/channels''${NIX_PATH:+:}$NIX_PATH
+
+      # The next line updates PATH for the Google Cloud SDK.
+      if [ -f "$HOME/opt/google-cloud-sdk/path.zsh.inc" ]; then . "$HOME/opt/google-cloud-sdk/path.zsh.inc"; fi
+
+      # The next line enables shell command completion for gcloud.
+      if [ -f "$HOME/opt/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/opt/google-cloud-sdk/completion.zsh.inc"; fi
 
       eval "$(direnv hook zsh)"
     '';
