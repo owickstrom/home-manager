@@ -1,6 +1,6 @@
 { config, lib, pkgs, ... }:
 {
-  programs.neovim = {
+  programs.vim = {
     enable = true;
     plugins = with pkgs.vimPlugins; [
       awesome-vim-colorschemes

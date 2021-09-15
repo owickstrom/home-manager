@@ -19,7 +19,6 @@
       e = "eval $EDITOR";
       ec = "emacsclient -nc";
       copy-to-clipboard = "xclip -selection clipboard";
-      vim = "nvim";
     };
     envExtra = ''
       if [ -e ~/.nix-profile/etc/profile.d/nix.sh ]; then
@@ -30,8 +29,6 @@
       [ -f "/Users/owi/.ghcup/env" ] && source "/Users/owi/.ghcup/env" # ghcup-env
     '';
     initExtra = ''
-      export EDITOR=vim
-
       # For home-manager
       export NIX_PATH=$HOME/.nix-defexpr/channels''${NIX_PATH:+:}$NIX_PATH
 
@@ -57,6 +54,7 @@
       export LDFLAGS="-L/opt/homebrew/opt/llvm/lib"
       export CPPFLAGS="-I/opt/homebrew/opt/llvm/include"
     '';
+    sessionVariables = { EDITOR = "vim"; };
   };
 
   programs.autojump.enable = true;
