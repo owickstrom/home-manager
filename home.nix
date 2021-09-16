@@ -9,7 +9,7 @@
     ./vim.nix
     ./tmux.nix
 
-    # ./ikea.nix
+    ./ikea.nix
   ];
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
@@ -21,7 +21,7 @@
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
   home.username = "owi";
-  home.homeDirectory = "/Users/owi";
+  home.homeDirectory = "/home/owi";
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
@@ -61,6 +61,9 @@
     shellcheck
     rustup
     nodejs
+    iosevka
+    spotify
+    libvterm
   ];
 
   home.activation = {

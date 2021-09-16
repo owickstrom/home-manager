@@ -2,7 +2,7 @@
 {
   programs.git = {
     enable = true;
-    userName = "owickstrom";
+    userName = "Oskar Wickström";
     userEmail = "oskar@wickstrom.tech";
     ignores = [ ".vscode" ".envrc" ".direnv" ];
     aliases = {
