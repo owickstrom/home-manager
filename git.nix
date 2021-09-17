@@ -1,14 +1,14 @@
-{ config, lib, pkgs, ... }:
-{
+{ config, lib, pkgs, ... }: {
   programs.git = {
     enable = true;
     userName = "Oskar Wickström";
     userEmail = "oskar@wickstrom.tech";
-    ignores = [ ".vscode" ".envrc" ".direnv" ];
+    ignores = [ ".vscode" ".envrc" ".direnv" ".dir-locals.el" ];
     aliases = {
       br = "branch";
       co = "checkout";
       ci = "commit";
+      cl = "clean";
       cp = "commit -p";
       s = "status";
       st = "status";
