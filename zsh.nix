@@ -55,6 +55,14 @@
       export CPPFLAGS="-I/opt/homebrew/opt/llvm/include"
     '';
     sessionVariables = { EDITOR = "vim"; };
+
+    prezto = {
+      enable = true;
+      prompt = {
+        pwdLength = "short";
+        theme = "sorin";
+      };
+    };
   };
 
   programs.autojump.enable = true;
