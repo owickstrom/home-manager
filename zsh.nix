@@ -54,14 +54,9 @@
       export LDFLAGS="-L/opt/homebrew/opt/llvm/lib"
       export CPPFLAGS="-I/opt/homebrew/opt/llvm/include"
     '';
-    sessionVariables = { EDITOR = "vim"; };
-
-    prezto = {
-      enable = true;
-      prompt = {
-        pwdLength = "short";
-        theme = "sorin";
-      };
+    sessionVariables = {
+      EDITOR = "vim";
+      PROMPT = "%~ %# ";
     };
   };
 

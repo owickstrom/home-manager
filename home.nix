@@ -64,6 +64,7 @@
     iosevka
     spotify
     libvterm
+    gnome.gnome-clocks
   ];
 
   home.activation = {
