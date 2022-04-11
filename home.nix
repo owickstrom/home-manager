@@ -62,8 +62,7 @@
     rustup
     nodejs
     iosevka
-    spotify
-    libvterm
+    haskell-language-server
   ];
 
   home.activation = {
