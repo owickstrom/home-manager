@@ -2,6 +2,7 @@
   xdg.configFile."skhd/skhdrc".text = ''
     alt + shift - e : yabai -m space --layout bsp
     alt + shift - s : yabai -m space --layout stack
+    alt + shift - r : yabai -m space --rotate 90
 
     alt + shift - j : yabai -m window --focus stack.next || yabai -m window --focus south
     alt + shift - k : yabai -m window --focus stack.prev || yabai -m window --focus north
