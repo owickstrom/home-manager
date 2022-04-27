@@ -8,6 +8,7 @@
     ./git.nix
     ./vim.nix
     ./tmux.nix
+    ./ctags.nix
 
     ./ikea.nix
   ];
@@ -61,9 +62,8 @@
     shellcheck
     rustup
     nodejs
-    iosevka
-    spotify
-    libvterm
+    iosevka-bin
+    universal-ctags
   ];
 
   home.activation = {
