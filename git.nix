@@ -3,7 +3,7 @@
     enable = true;
     userName = "Oskar Wickström";
     userEmail = "oskar@wickstrom.tech";
-    ignores = [ ".vscode" ".envrc" ".direnv" ".dir-locals.el" ];
+    ignores = [ ".vscode" ".envrc" ".direnv" ".dir-locals.el" "TAGS" ];
     aliases = {
       br = "branch";
       co = "checkout";
