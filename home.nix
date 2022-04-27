@@ -64,6 +64,7 @@
     nodejs
     iosevka-bin
     universal-ctags
+    haskell-language-server
   ];
 
   home.activation = {

@@ -38,6 +38,8 @@
       # The next line enables shell command completion for gcloud.
       if [ -f "$HOME/opt/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/opt/google-cloud-sdk/completion.zsh.inc"; fi
 
+      if [ -f $HOME/.cargo/env ]; then source $HOME/.cargo/env; fi
+
       eval "$(direnv hook zsh)"
     '';
     profileExtra = ''
@@ -49,12 +51,13 @@
 
       # If you need to have llvm first in your PATH, run:
       export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
+      export PATH="$HOME/.cargo/bin:$PATH"
 
       # For compilers to find llvm you may need to set:
       export LDFLAGS="-L/opt/homebrew/opt/llvm/lib"
       export CPPFLAGS="-I/opt/homebrew/opt/llvm/include"
+      export EDITOR="vim"
     '';
-    sessionVariables = { EDITOR = "vim"; };
 
     prezto = {
       enable = true;
