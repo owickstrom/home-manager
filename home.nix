@@ -21,7 +21,7 @@
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
   home.username = "owi";
-  home.homeDirectory = "/home/owi";
+  home.homeDirectory = "/Users/owi";
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
@@ -56,10 +56,11 @@
     tree
     awscli
     nix-prefetch-git
+    bat
+    delta
     # pandoc
     poetry
     shellcheck
-    rustup
     nodejs
     iosevka
     haskell-language-server
