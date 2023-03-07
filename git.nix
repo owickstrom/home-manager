@@ -22,6 +22,8 @@
       core.editor = "vim";
       credential.helper = "store --file ~/.git-credentials";
       pull.rebase = "false";
+      github.user = "owickstrom";
+      push.autoSetupRemote = true;
     };
   };
 }

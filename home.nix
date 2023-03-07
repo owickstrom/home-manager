@@ -57,6 +57,7 @@
     tree
     awscli
     nix-prefetch-git
+    difftastic
     # pandoc
     poetry
     shellcheck
@@ -65,6 +66,7 @@
     iosevka-bin
     universal-ctags
     haskell-language-server
+    nix-tree
   ];
 
   home.activation = {
