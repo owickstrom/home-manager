@@ -3,6 +3,7 @@
   imports = [
     ./yabai.nix
     ./skhd.nix
+    ./alacritty.nix
 
     ./zsh.nix
     ./git.nix
@@ -44,7 +45,11 @@
   #   keep-derivations = true
   #   keep-outputs = true
 
-  home.packages = with pkgs; [
+  home.packages = let
+    devenv = (import (fetchTarball
+      "https://github.com/cachix/devenv/archive/v0.6.2.tar.gz")).default;
+
+  in with pkgs; [
     htop
     cachix
     ghcid
@@ -67,6 +72,7 @@
     universal-ctags
     haskell-language-server
     nix-tree
+    devenv
   ];
 
   home.activation = {

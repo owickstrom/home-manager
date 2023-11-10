@@ -33,6 +33,6 @@
 
     ctrl + alt + shift - f : yabai -m window --toggle float
 
-    alt + shift - return : osascript -e 'tell application "iTerm" to create window with default profile'
+    alt + shift - return : open -n -a ~/Applications/Alacritty.app
   '';
 }
