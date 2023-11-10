@@ -24,6 +24,7 @@
       pull.rebase = "false";
       github.user = "owickstrom";
       push.autoSetupRemote = true;
+      diff.external = "difft";
     };
   };
 }

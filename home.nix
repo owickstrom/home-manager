@@ -70,7 +70,7 @@
     shellcheck
     nodejs
     iosevka-bin
-    universal-ctags
+    yarn
     haskell-language-server
     nix-tree
     devenv
