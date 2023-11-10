@@ -58,12 +58,16 @@
     nix-prefetch-git
     bat
     delta
+    difftastic
     # pandoc
     poetry
     shellcheck
     nodejs
+    yarn
     iosevka
     haskell-language-server
+
+    (import (fetchTarball https://github.com/cachix/devenv/archive/v0.6.3.tar.gz)).default
   ];
 
   home.activation = {

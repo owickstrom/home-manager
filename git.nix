@@ -22,6 +22,7 @@
       core.editor = "vim";
       credential.helper = "store --file ~/.git-credentials";
       pull.rebase = "false";
+      diff.external = "difft";
     };
   };
 }
