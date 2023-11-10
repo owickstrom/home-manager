@@ -1,7 +1,8 @@
 { config, lib, pkgs, ... }:
 {
-  programs.vim = {
+  programs.neovim = {
     enable = true;
+    vimAlias = true;
     plugins = with pkgs.vimPlugins; [
       awesome-vim-colorschemes
       vim-trailing-whitespace
@@ -68,7 +69,7 @@
       " Allow hidden windows
       set hidden
 
-      set termguicolors
+      set notermguicolors
       colorscheme paramount
     '';
   };
