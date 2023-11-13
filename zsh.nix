@@ -21,10 +21,11 @@
       copy-to-clipboard = "xclip -selection clipboard";
     };
     envExtra = ''
-      if [ -e ~/.nix-profile/etc/profile.d/nix.sh ]; then
-        . ~/.nix-profile/etc/profile.d/nix.sh;
-        export NIX_PATH=$HOME/.nix-defexpr/channels''${NIX_PATH:+:}$NIX_PATH
-      fi # added by Nix installer
+      # Nix
+      if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
+        . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
+      fi
+      # End Nix
 
       [ -f "/Users/owi/.ghcup/env" ] && source "/Users/owi/.ghcup/env" # ghcup-env
     '';
