@@ -22,8 +22,8 @@
 
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
-  home.username = "owi";
-  home.homeDirectory = "/home/owi";
+  home.username = "owswi";
+  home.homeDirectory = "/Users/owi";
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
