@@ -1,7 +1,16 @@
-{ config, lib, pkgs, ... }: {
+{ config, lib, pkgs, ... }:
+let
+    themes = (fetchTarball
+      "https://github.com/alacritty/alacritty-theme/archive/808b81b2e88884e8eca5d951b89f54983fa6c237.tar.gz");
+in
+{
   xdg.configFile."alacritty/alacritty.yml".text = ''
+import:
+ - ${themes}/themes/challenger_deep.yaml
+
 shell:
   program: /bin/zsh
+  args: ["-l"]
 
 window:
   decorations: none
@@ -21,16 +30,16 @@ scrolling:
 
 font:
   normal:
-    family: Jetbrains Mono
+    family: JetBrains Mono
     style: Regular
   bold:
-    family: Jetbrains Mono
+    family: JetBrains Mono
     style: Bold
   italic:
-    family: Jetbrains Mono
+    family: JetBrains Mono
     style: Italic
   bold_italic:
-    family: Jetbrains Mono
+    family: JetBrains Mono
     style: Bold Italic
   size: 13.0
 

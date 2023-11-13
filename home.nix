@@ -22,7 +22,7 @@
 
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
-  home.username = "owswi";
+  home.username = "owi";
   home.homeDirectory = "/Users/owi";
 
   # This value determines the Home Manager release that your
@@ -62,14 +62,15 @@
     tree
     awscli
     nix-prefetch-git
+    bat
+    delta
     difftastic
     # pandoc
     poetry
     shellcheck
-    rustup
     nodejs
     iosevka-bin
-    universal-ctags
+    yarn
     haskell-language-server
     nix-tree
     devenv
