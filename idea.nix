@@ -5,12 +5,15 @@ let
   '';
 in {
   home.packages = with pkgs; [
-    launcher
+    # launcher
   ];
 
   home.file.".ideavimrc".text = ''
     nnoremap zC :action CollapseRegionRecursively<CR>
     nnoremap zO :action ExpandRegionRecursively<CR>
   '';
+
+  programs.java.enable = true;
+  programs.java.package = pkgs.temurin-bin-21;
 
 }

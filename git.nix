@@ -1,18 +1,22 @@
 { config, lib, pkgs, ... }: {
+  home.packages = [ pkgs.gitAndTools.gh ];
   programs.git = {
     enable = true;
     userName = "Oskar Wickström";
     userEmail = "oskar@wickstrom.tech";
-    ignores = [ ".vscode" ".envrc" ".direnv" ".dir-locals.el" "TAGS" ];
+    ignores = [ ".vscode" ".direnv" ".dir-locals.el" "TAGS" ];
     aliases = {
+      aa = "add --all";
       br = "branch";
       co = "checkout";
+      c = "commit -m";
       ci = "commit";
       cl = "clean";
       cp = "commit -p";
       s = "status";
       st = "status";
       d = "diff";
+      dc = "diff --cached";
       pl = "pull";
       ps = "push";
       l =

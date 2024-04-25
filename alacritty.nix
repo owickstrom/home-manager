@@ -1,58 +1,59 @@
 { config, lib, pkgs, ... }:
 let
-    themes = (fetchTarball
-      "https://github.com/alacritty/alacritty-theme/archive/808b81b2e88884e8eca5d951b89f54983fa6c237.tar.gz");
-in
-{
-  xdg.configFile."alacritty/alacritty.yml".text = ''
-import:
- - ${themes}/themes/challenger_deep.yaml
+  themes = (fetchTarball
+    "https://github.com/alacritty/alacritty-theme/archive/cb786242b6f5e00a57e2f541e7bf1115f3950650.tar.gz");
+in {
+  xdg.configFile."alacritty/alacritty.toml".text = ''
 
-shell:
-  program: /bin/zsh
-  args: ["-l"]
+    import = [
+      "${themes}/themes/github_dark.toml"
+    ]
 
-window:
-  decorations: none
-  opacity: 0.95
-  blur: true
-  option_as_alt: Both
-  padding:
-    x: 8
-    y: 8
+    [font]
+    size = 12.0
 
-scrolling:
-  # Specifying '0' will disable scrolling.
-  history: 100000
-  # Number of lines the viewport will move for every line scrolled when
-  # scrollback is enabled (history > 0).
-  multiplier: 3
+    [font.bold]
+    family = "JetBrainsMono Nerd Font"
+    style = "Bold"
 
-font:
-  normal:
-    family: JetBrains Mono
-    style: Regular
-  bold:
-    family: JetBrains Mono
-    style: Bold
-  italic:
-    family: JetBrains Mono
-    style: Italic
-  bold_italic:
-    family: JetBrains Mono
-    style: Bold Italic
-  size: 13.0
+    [font.bold_italic]
+    family = "JetBrainsMono Nerd Font"
+    style = "Bold Italic"
 
-#mouse:
-#  url:
-#    launcher:
-#      # This depends on your OS, on Mac it’s `open`
-#      program: open
-#    modifiers: Command
+    [font.italic]
+    family = "JetBrainsMono Nerd Font"
+    style = "Italic"
 
+    [font.normal]
+    family = "JetBrainsMono Nerd Font"
+    style = "Medium"
 
-key_bindings:
-  - { key: Left,     mods: Alt,     chars: "\x1bb" }
-  - { key: Right,    mods: Alt,     chars: "\x1bf" }
+    [[keyboard.bindings]]
+    chars = "\u001Bb"
+    key = "Left"
+    mods = "Alt"
+
+    [[keyboard.bindings]]
+    chars = "\u001Bf"
+    key = "Right"
+    mods = "Alt"
+
+    [scrolling]
+    history = 100000
+    multiplier = 3
+
+    [shell]
+    args = ["-l"]
+    program = "/nix/store/w81n67bahxz0ll5avk5kdj25ridwf6y8-zsh-5.9/bin/zsh"
+
+    [window]
+    blur = true
+    decorations = "none"
+    opacity = 1
+    # option_as_alt = "Both"
+
+    [window.padding]
+    x = 8
+    y = 8
   '';
 }

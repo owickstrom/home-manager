@@ -1,4 +1,5 @@
 { config, lib, pkgs, ... }: {
+  programs.fzf.enable = true;
   programs.zsh = {
     defaultKeymap = "emacs";
     enable = true;
@@ -9,13 +10,7 @@
       ll = "ls -l";
       lla = "ls -la";
       g = "git";
-      gs = "git status";
-      gaa = "git add --all";
-      gd = "git diff";
-      gdc = "git diff --cached";
-      gps = "git push";
-      gpl = "git pull";
-      gh = "git log --graph --pretty=oneline --abbrev-commit";
+      gs = "echo No.";
       e = "eval $EDITOR";
       ec = "emacsclient -nc";
       copy-to-clipboard = "xclip -selection clipboard";
@@ -26,18 +21,10 @@
         . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
       fi
       # End Nix
-
-      [ -f "/Users/owi/.ghcup/env" ] && source "/Users/owi/.ghcup/env" # ghcup-env
     '';
     initExtra = ''
       # For home-manager
       export NIX_PATH=$HOME/.nix-defexpr/channels''${NIX_PATH:+:}$NIX_PATH
-
-      # The next line updates PATH for the Google Cloud SDK.
-      if [ -f "$HOME/opt/google-cloud-sdk/path.zsh.inc" ]; then . "$HOME/opt/google-cloud-sdk/path.zsh.inc"; fi
-
-      # The next line enables shell command completion for gcloud.
-      if [ -f "$HOME/opt/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/opt/google-cloud-sdk/completion.zsh.inc"; fi
 
       if [ -f $HOME/.cargo/env ]; then source $HOME/.cargo/env; fi
 

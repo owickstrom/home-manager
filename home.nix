@@ -4,6 +4,7 @@
     ./yabai.nix
     ./skhd.nix
     ./alacritty.nix
+    ./regolith3.nix
 
     ./zsh.nix
     ./git.nix
@@ -15,15 +16,18 @@
   ];
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
-  news.display = "silent";
+  # news.display = "silent";
+
+  nix = { gc = { automatic = true; }; };
 
   nixpkgs.config.allowUnfree = true;
   nixpkgs.overlays = [ (import pkgs/electronmail.nix) ];
+  targets.genericLinux.enable = true;
 
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
   home.username = "owi";
-  home.homeDirectory = "/Users/owi";
+  home.homeDirectory = "/home/owi";
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
@@ -45,11 +49,7 @@
   #   keep-derivations = true
   #   keep-outputs = true
 
-  home.packages = let
-    devenv = (import (fetchTarball
-      "https://github.com/cachix/devenv/archive/v0.6.2.tar.gz")).default;
-
-  in with pkgs; [
+  home.packages = with pkgs; [
     htop
     cachix
     ghcid
@@ -70,16 +70,17 @@
     shellcheck
     nodejs
     iosevka-bin
+    jetbrains-mono
     yarn
     haskell-language-server
     nix-tree
-    devenv
+    (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
   ];
 
   home.activation = {
     aliasApplications = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
       app_folder=$(echo ~/Applications);
-      
+
       for app in $(ls "$genProfilePath/home-path/Applications"); do
         $DRY_RUN_CMD rm -f $app_folder/$app
         $DRY_RUN_CMD osascript -e "tell app \"Finder\"" -e "make new alias file at POSIX file \"$app_folder\" to POSIX file \"$genProfilePath/home-path/Applications/$app\"" -e "set name of result to \"$app\"" -e "end tell"
