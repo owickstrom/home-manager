@@ -44,11 +44,11 @@ in {
 
     [shell]
     args = ["-l"]
-    program = "/nix/store/w81n67bahxz0ll5avk5kdj25ridwf6y8-zsh-5.9/bin/zsh"
+    program = "${pkgs.zsh}/bin/zsh"
 
     [window]
     blur = true
-    decorations = "none"
+    decorations = "None"
     opacity = 1
     # option_as_alt = "Both"
 

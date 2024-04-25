@@ -21,7 +21,7 @@
       bind - split-window -v
 
       # Subtle bottom bar color.
-      set -g status-bg colour7
+      set -g status-bg colour8
       set -g status-fg colour0
     '';
 
