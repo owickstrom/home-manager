@@ -26,6 +26,7 @@
       unbind %
       bind | split-window -h
       bind - split-window -v
+      bind f set -g status
 
       # Subtle bottom bar color.
       set -g status-bg colour8
