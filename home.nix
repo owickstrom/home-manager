@@ -1,10 +1,15 @@
-{ config, pkgs, lib, ... }: {
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
+{
 
   imports = [
     ./yabai.nix
     ./skhd.nix
     ./alacritty.nix
-    ./regolith3.nix
 
     ./zsh.nix
     ./git.nix
@@ -18,7 +23,11 @@
   programs.home-manager.enable = true;
   # news.display = "silent";
 
-  nix = { gc = { automatic = true; }; };
+  nix = {
+    gc = {
+      automatic = true;
+    };
+  };
 
   nixpkgs.config.allowUnfree = true;
   nixpkgs.overlays = [ (import pkgs/electronmail.nix) ];
@@ -57,7 +66,7 @@
     jq
     ripgrep
     xclip
-    nixfmt
+    nixfmt-rfc-style
     gitAndTools.hub
     tree
     awscli

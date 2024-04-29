@@ -1,4 +1,10 @@
-{ config, lib, pkgs, ... }: {
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
+{
   programs.tmux = {
     enable = true;
     shortcut = "C-]";
@@ -9,6 +15,7 @@
     historyLimit = 100000;
     resizeAmount = 5;
     escapeTime = 0;
+    shell = "${pkgs.zsh}/bin/zsh";
     terminal = "screen-256color";
 
     extraConfig = ''
@@ -24,7 +31,5 @@
       set -g status-bg colour8
       set -g status-fg colour0
     '';
-
   };
-
 }
