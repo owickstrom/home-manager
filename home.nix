@@ -58,37 +58,37 @@
   #   keep-derivations = true
   #   keep-outputs = true
 
-  home.packages = let
-    devenv = (import (fetchTarball
-      "https://github.com/cachix/devenv/archive/v0.6.3.tar.gz")).default;
-
-  in with pkgs; [
-    htop
-    cachix
-    ghcid
-    tmux
-    jq
-    ripgrep
-    xclip
-    nixfmt-rfc-style
-    gitAndTools.hub
-    tree
-    awscli
-    nix-prefetch-git
-    bat
-    delta
-    difftastic
-    # pandoc
-    poetry
-    shellcheck
-    nodejs
-    iosevka-bin
-    jetbrains-mono
-    yarn
-    haskell-language-server
-    nix-tree
-    (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
-  ];
+  home.packages =
+    let
+      devenv = (import (fetchTarball "https://github.com/cachix/devenv/archive/v0.6.3.tar.gz")).default;
+    in
+    with pkgs;
+    [
+      htop
+      cachix
+      ghcid
+      tmux
+      jq
+      ripgrep
+      xclip
+      nixfmt-rfc-style
+      tree
+      awscli
+      nix-prefetch-git
+      bat
+      delta
+      difftastic
+      # pandoc
+      poetry
+      shellcheck
+      nodejs
+      iosevka-bin
+      jetbrains-mono
+      yarn
+      haskell-language-server
+      nix-tree
+      (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+    ];
 
   home.activation = {
     aliasApplications = lib.hm.dag.entryAfter [ "writeBoundary" ] ''

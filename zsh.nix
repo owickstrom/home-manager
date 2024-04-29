@@ -16,7 +16,13 @@
       ll = "ls -l";
       lla = "ls -la";
       g = "git";
-      gs = "echo No.";
+      gs = "git status";
+      gaa = "git add --all";
+      gd = "git diff";
+      gdc = "git diff --cached";
+      gps = "git push";
+      gpl = "git pull";
+      gh = "git log --graph --pretty=oneline --abbrev-commit";
       e = "eval $EDITOR";
       ec = "emacsclient -nc";
       copy-to-clipboard = "xclip -selection clipboard";
