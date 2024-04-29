@@ -49,7 +49,11 @@
   #   keep-derivations = true
   #   keep-outputs = true
 
-  home.packages = with pkgs; [
+  home.packages = let
+    devenv = (import (fetchTarball
+      "https://github.com/cachix/devenv/archive/v0.6.3.tar.gz")).default;
+
+  in with pkgs; [
     htop
     cachix
     ghcid

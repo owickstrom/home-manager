@@ -21,6 +21,10 @@
         . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
       fi
       # End Nix
+
+      [ -f "/Users/owi/.ghcup/env" ] && source "/Users/owi/.ghcup/env" # ghcup-env
+
+      export DOCKER_HOST="unix://$HOME/.colima/docker.sock"
     '';
     initExtra = ''
       # For home-manager
@@ -44,8 +48,9 @@
       # For compilers to find llvm you may need to set:
       export LDFLAGS="-L/opt/homebrew/opt/llvm/lib"
       export CPPFLAGS="-I/opt/homebrew/opt/llvm/include"
-      export EDITOR="vim"
-      export VISUAL="vim"
+      export EDITOR="nvim"
+      export VISUAL="nvim"
+      alias vim=nvim
     '';
 
     prezto = {
