@@ -1,8 +1,15 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 let
-  themes = (fetchTarball
-    "https://github.com/alacritty/alacritty-theme/archive/cb786242b6f5e00a57e2f541e7bf1115f3950650.tar.gz");
-in {
+  themes = (
+    fetchTarball "https://github.com/alacritty/alacritty-theme/archive/cb786242b6f5e00a57e2f541e7bf1115f3950650.tar.gz"
+  );
+in
+{
   xdg.configFile."alacritty/alacritty.toml".text = ''
 
     import = [

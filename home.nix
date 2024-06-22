@@ -30,6 +30,8 @@
   };
 
   nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.input-fonts.acceptLicense = true;
+
   nixpkgs.overlays = [ (import pkgs/electronmail.nix) ];
   targets.genericLinux.enable = true;
 
@@ -88,6 +90,9 @@
       haskell-language-server
       nix-tree
       (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+      pkgs.inter
+      pkgs.commit-mono
+      pkgs.input-fonts
     ];
 
   home.activation = {
