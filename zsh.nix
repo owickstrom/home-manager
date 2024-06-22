@@ -42,8 +42,6 @@
       # For home-manager
       export NIX_PATH=$HOME/.nix-defexpr/channels''${NIX_PATH:+:}$NIX_PATH
 
-      if [ -f $HOME/.cargo/env ]; then source $HOME/.cargo/env; fi
-
       eval "$(direnv hook zsh)"
     '';
     profileExtra = ''

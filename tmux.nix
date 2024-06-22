@@ -31,6 +31,11 @@
       # Subtle bottom bar color.
       set -g status-bg colour8
       set -g status-fg colour0
+
+      # Pass-through env vars from alacritty
+      set-option -g update-environment "ALACRITTY_LOG \
+                                  ALACRITTY_WINDOW_ID \
+                                  ALACRITTY_SOCKET"
     '';
   };
 }
