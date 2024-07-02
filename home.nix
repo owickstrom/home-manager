@@ -10,6 +10,7 @@
     ./yabai.nix
     ./skhd.nix
     ./alacritty.nix
+    ./ghostty.nix
 
     ./zsh.nix
     ./git.nix

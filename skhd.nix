@@ -1,4 +1,10 @@
-{ config, lib, pkgs, ... }: {
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
+{
   xdg.configFile."skhd/skhdrc".text = ''
     alt + shift - e : yabai -m space --layout bsp
     alt + shift - s : yabai -m space --layout stack
@@ -33,6 +39,6 @@
 
     ctrl + alt + shift - f : yabai -m window --toggle float
 
-    alt + shift - return : open -n -a /Applications/Alacritty.app
+    alt + shift - return : open -n -a /Applications/Ghostty.app
   '';
 }
