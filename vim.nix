@@ -92,55 +92,10 @@
       set bg=light
       colorscheme zenwritten
 
-      lua << EOF
-        require("conform").setup({
-          formatters_by_ft = {
-            lua = { "stylua" },
-            python = { "black" },
-            nix = { "nixfmt" },
-            ocaml = { "ocamlformat" },
-            zig = { "zigfmt" },
-            javascript = { "prettier" },
-            typescript = { "prettier" },
-          },
-        })
-      EOF
-
-      " Neogit
-      lua << EOF
-        local neogit = require('neogit')
-        neogit.setup {}
-      EOF
-      map <Leader>g :Neogit<CR>
-
-      " LSP
-      lua << EOF
-        local lsp = require('lspconfig')
-        lsp.zls.setup{}
-        lsp.zls.setup{}
-      EOF
-      map [d :lua vim.diagnostic.goto_prev()<CR>
-      map ]d :lua vim.diagnostic.goto_next()<CR>
-      nnoremap K :lua vim.lsp.buf.hover()<CR>
-
-      " Completion
-      lua << EOF
-        local cmp = require('cmp')
-
-        cmp.setup({
-          mapping = cmp.mapping.preset.insert({
-            ['<C-b>'] = cmp.mapping.scroll_docs(-4),
-            ['<C-f>'] = cmp.mapping.scroll_docs(4),
-            ['<C-Space>'] = cmp.mapping.complete(),
-            ['<C-e>'] = cmp.mapping.abort(),
-            ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
-          }),
-          sources = cmp.config.sources(
-            { { name = 'nvim_lsp' }, }, 
-            { { name = 'buffer' }, 
-          })
-        })
-      EOF
+      luafile ${vim/completion.lua}
+      luafile ${vim/formatting.lua}
+      luafile ${vim/git.lua}
+      luafile ${vim/lsp.lua}
     '';
     extraPackages = with pkgs; [
         lua-language-server
