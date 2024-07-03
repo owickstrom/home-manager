@@ -10,8 +10,16 @@
     vimAlias = true;
     plugins = with pkgs.vimPlugins; [
       nvim-lspconfig
-      nvim-treesitter.withAllGrammars
-      lush-nvim
+      (nvim-treesitter.withPlugins(p: [
+        p.bash
+        p.json
+        p.lua
+        p.markdown
+        p.nix
+        p.python
+        p.rust
+        p.zig
+      ]))
       zenbones-nvim
       conform-nvim
       neogit
@@ -20,12 +28,12 @@
       nvim-cmp
       cmp-nvim-lsp
       cmp-buffer
-      cmp-path
-      cmp-cmdline
       cmp-nvim-lsp-signature-help
-
     ];
     extraConfig = ''
+      " For faster startup
+      lua vim.loader.enable()
+
       " General
       set nocompatible            " get rid of Vi compatibility mode. SET FIRST!
       filetype plugin indent on   " filetype detection[ON] plugin[ON] indent[ON]
@@ -41,7 +49,7 @@
 
       " Cursor/Line
       set number
-      set colorcolumn=80          " ruler at 80 chars width
+      set colorcolumn=-0          " based on textwidth
       set cursorline              " highlight the current line
 
       " Status/History
@@ -87,11 +95,17 @@
       " Allow hidden windows
       set hidden
 
+      " Grep with rg
+      set grepprg=rg\ --line-number\ --column
+      set grepformat=%f:%l:%c:%m
+
       " Theme
       set termguicolors
       set bg=light
+      let g:bones_compat = 1
       colorscheme zenwritten
 
+      luafile ${vim/keymap.lua}
       luafile ${vim/completion.lua}
       luafile ${vim/formatting.lua}
       luafile ${vim/git.lua}
