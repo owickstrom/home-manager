@@ -103,6 +103,7 @@
       set termguicolors
       set bg=light
       let g:bones_compat = 1
+      let g:zenbones_transparent_background = 1
       colorscheme zenwritten
 
       luafile ${vim/keymap.lua}
