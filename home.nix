@@ -11,6 +11,7 @@
     ./skhd.nix
     ./alacritty.nix
     ./ghostty.nix
+    ./bat.nix
 
     ./zsh.nix
     ./git.nix

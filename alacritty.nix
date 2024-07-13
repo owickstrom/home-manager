@@ -13,7 +13,7 @@ in
   xdg.configFile."alacritty/alacritty.toml".text = ''
 
     import = [
-      "${themes}/themes/github_dark.toml"
+      "${themes}/themes/base16_default_dark.toml"
     ]
 
     [font]

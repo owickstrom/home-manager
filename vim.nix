@@ -20,9 +20,12 @@
         p.rust
         p.zig
       ]))
-      zenbones-nvim
       conform-nvim
       neogit
+      fzf-vim
+
+      lush-nvim
+      zenbones-nvim
 
       # Completions
       nvim-cmp
@@ -101,9 +104,9 @@
 
       " Theme
       set termguicolors
-      set bg=light
-      let g:bones_compat = 1
+      set bg=dark
       let g:zenbones_transparent_background = 1
+      let g:zenwritten_transparent_background = 1
       colorscheme zenwritten
 
       luafile ${vim/keymap.lua}
@@ -116,4 +119,10 @@
         lua-language-server
     ];
   };
+
+  xdg.configFile."zls.json".text = ''
+    {
+      "enable_build_on_save": true
+    }
+    '';
 }
