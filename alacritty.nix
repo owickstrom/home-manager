@@ -13,11 +13,11 @@ in
   xdg.configFile."alacritty/alacritty.toml".text = ''
 
     import = [
-      "${themes}/themes/base16_default_dark.toml"
+      "${themes}/themes/atom_one_dark.toml"
     ]
 
     [font]
-    size = 12.0
+    size = 13.0
 
     [font.bold]
     family = "JetBrainsMono Nerd Font"
@@ -44,6 +44,10 @@ in
     chars = "\u001Bf"
     key = "Right"
     mods = "Alt"
+
+    [[keyboard.bindings]]
+    key = "F11"
+    action = "ToggleFullscreen"
 
     [scrolling]
     history = 100000

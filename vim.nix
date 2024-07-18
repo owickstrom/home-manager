@@ -24,9 +24,6 @@
       neogit
       fzf-vim
 
-      lush-nvim
-      zenbones-nvim
-
       # Completions
       nvim-cmp
       cmp-nvim-lsp
@@ -102,12 +99,17 @@
       set grepprg=rg\ --line-number\ --column
       set grepformat=%f:%l:%c:%m
 
+      augroup custom_highlight
+        autocmd!
+        au ColorScheme default highlight! link Function Normal
+        au ColorScheme default highlight! link Constant Directory
+        au ColorScheme default highlight! Comment gui=italic
+      augroup END
+
       " Theme
       set termguicolors
       set bg=dark
-      let g:zenbones_transparent_background = 1
-      let g:zenwritten_transparent_background = 1
-      colorscheme zenwritten
+      colorscheme default
 
       luafile ${vim/keymap.lua}
       luafile ${vim/completion.lua}

@@ -23,8 +23,6 @@
       gps = "git push";
       gpl = "git pull";
       gh = "git log --graph --pretty=oneline --abbrev-commit";
-      e = "eval $EDITOR";
-      ec = "emacsclient -nc";
       copy-to-clipboard = "xclip -selection clipboard";
     };
     envExtra = ''
@@ -61,6 +59,8 @@
       export EDITOR="nvim"
       export VISUAL="nvim"
       alias vim=nvim
+
+      export FZF_DEFAULT_COMMAND='rg --files --hidden'
     '';
 
     prezto = {
