@@ -95,6 +95,7 @@
       pkgs.inter
       pkgs.commit-mono
       pkgs.input-fonts
+      pkgs.lazygit
     ];
 
   home.activation = {

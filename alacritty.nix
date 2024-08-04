@@ -13,19 +13,25 @@ in
   xdg.configFile."alacritty/alacritty.toml".text = ''
 
     import = [
-      "${themes}/themes/atom_one_dark.toml"
+      "${themes}/themes/ayu_dark.toml"
     ]
 
+    
+    # override with high contrast colors
+    [colors.primary]
+    background = '#000000'
+    foreground = '#ffffff'
+
     [font]
-    size = 13.0
+    size = 11.0
 
     [font.bold]
     family = "JetBrainsMono Nerd Font"
-    style = "Bold"
+    style = "ExtraBold"
 
     [font.bold_italic]
     family = "JetBrainsMono Nerd Font"
-    style = "Bold Italic"
+    style = "ExtraBold Italic"
 
     [font.italic]
     family = "JetBrainsMono Nerd Font"

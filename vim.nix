@@ -99,17 +99,13 @@
       set grepprg=rg\ --line-number\ --column
       set grepformat=%f:%l:%c:%m
 
-      augroup custom_highlight
-        autocmd!
-        au ColorScheme default highlight! link Function Normal
-        au ColorScheme default highlight! link Constant Directory
-        au ColorScheme default highlight! Comment gui=italic
-      augroup END
-
       " Theme
       set termguicolors
       set bg=dark
-      colorscheme default
+      colorscheme quiet
+      highlight Keyword gui=bold
+      highlight Comment gui=italic
+      highlight Constant guifg=#ddff00
 
       luafile ${vim/keymap.lua}
       luafile ${vim/completion.lua}
