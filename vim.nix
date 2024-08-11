@@ -105,7 +105,8 @@
       colorscheme quiet
       highlight Keyword gui=bold
       highlight Comment gui=italic
-      highlight Constant guifg=#ddff00
+      highlight Constant guifg=#999999
+      highlight NormalFloat guibg=#333333
 
       luafile ${vim/keymap.lua}
       luafile ${vim/completion.lua}
