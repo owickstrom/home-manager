@@ -19,16 +19,11 @@
         p.python
         p.rust
         p.zig
+        p.vimdoc
       ]))
       conform-nvim
       neogit
       fzf-vim
-
-      # Completions
-      nvim-cmp
-      cmp-nvim-lsp
-      cmp-buffer
-      cmp-nvim-lsp-signature-help
     ];
     extraConfig = ''
       " For faster startup
@@ -61,9 +56,9 @@
       set ttyfast
 
       " Files
-      set autoread                   " auto-reload files changed on disk
-      set updatecount=0              " disable swap files
-      set wildmode=longest,list,full " :e completion mode
+      set autoread                            " auto-reload files changed on disk
+      set updatecount=0                       " disable swap files
+      set wildmode=longest,list,full 
 
       " Vimdiff
       set diffopt=filler,vertical

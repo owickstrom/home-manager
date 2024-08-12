@@ -21,6 +21,9 @@ vim.keymap.set('n', '<leader>tf',  ':tabfind')
 vim.keymap.set('n', '[q',  ':cprev<cr>')
 vim.keymap.set('n', ']q',  ':cnext<cr>')
 
+-- completion
+vim.keymap.set('i', '<C-Space>', '<C-x><C-o>')
+
 -- git
 vim.keymap.set('n', '<Leader>gg', neogit.open)
 vim.keymap.set('n', '<leader>gf',  ':GFiles<cr>')
