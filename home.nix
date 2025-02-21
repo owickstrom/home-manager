@@ -62,50 +62,47 @@
   #   keep-derivations = true
   #   keep-outputs = true
 
-  home.packages =
-    let
-      devenv = (import (fetchTarball "https://github.com/cachix/devenv/archive/v0.6.3.tar.gz")).default;
-    in
-    with pkgs;
-    [
-      htop
-      cachix
-      ghcid
-      tmux
-      jq
-      ripgrep
-      fd
-      xclip
-      nixfmt-rfc-style
-      tree
-      awscli
-      nix-prefetch-git
-      bat
-      delta
-      difftastic
-      pandoc
+  home.packages = with pkgs; [
+    # System
+    firefox
 
-      # Python
-      python313
-      poetry
-      uv
-      pyright
-      python313Packages.black
+    # Git
+    difftastic
 
-      shellcheck
-      nodejs
-      iosevka-bin
-      jetbrains-mono
-      yarn
-      haskell-language-server
-      nix-tree
-      pkgs.jetbrains-mono
-      pkgs.nerd-fonts.jetbrains-mono
-      inter
-      lazygit
-      firefox
-      ollama
-    ];
+    # Nix
+    nix-prefetch-git
+    nixfmt-rfc-style
+    nix-tree
+    cachix
+
+    # Python
+    python313
+    uv
+    pyright
+    python313Packages.black
+
+    # JS
+    nodejs
+    yarn
+
+    # Fonts
+    jetbrains-mono
+    nerd-fonts.jetbrains-mono
+    inter
+
+    # Tools
+    shellcheck
+    ollama
+    btop
+    tmux
+    jq
+    ripgrep
+    xclip
+    tree
+    awscli
+    bat
+    pandoc
+  ];
 
   home.activation = {
     aliasApplications = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
