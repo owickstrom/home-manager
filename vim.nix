@@ -4,14 +4,36 @@
   pkgs,
   ...
 }:
+
+let
+  auto-dark-mode =
+    let
+      version = "02ef9553e2a1d6e861bc6955d58ce5883d28a6ad";
+    in
+    pkgs.vimUtils.buildVimPlugin {
+      inherit version;
+      pname = "auto-dark-mode-nvim";
+      src = pkgs.fetchFromGitHub {
+        owner = "f-person";
+        repo = "auto-dark-mode.nvim";
+        rev = version;
+        hash = "sha256-FTXakglUrqifEXjzES6M4L+rthItu5rlw6QyIOLYNOc=";
+      };
+    };
+in
 {
   programs.neovim = {
     enable = true;
     vimAlias = true;
+    defaultEditor = true;
     plugins = with pkgs.vimPlugins; [
+      auto-dark-mode
+      # lsp/langs
       nvim-lspconfig
-      (nvim-treesitter.withPlugins(p: [
+      (nvim-treesitter.withPlugins (p: [
         p.bash
+        p.go
+        p.java
         p.json
         p.lua
         p.markdown
@@ -20,10 +42,19 @@
         p.rust
         p.zig
         p.vimdoc
+        p.graphql
       ]))
-      conform-nvim
+      nvim-jdtls
+      # git
       neogit
-      fzf-vim
+      gitlinker-nvim
+      # other
+      conform-nvim
+      fzf-lua
+      zenbones-nvim
+      goyo
+      copilot-lua
+      CopilotChat-nvim
     ];
     extraConfig = ''
       " For faster startup
@@ -33,6 +64,8 @@
       set nocompatible            " get rid of Vi compatibility mode. SET FIRST!
       filetype plugin indent on   " filetype detection[ON] plugin[ON] indent[ON]
       syntax enable               " enable syntax highlighting (previously syntax on).
+      set exrc                    " load .vimrc files from cwd
+      set secure                  " and do so in a secure way
 
       " Tabs/spaces
       set tabstop=2
@@ -96,13 +129,27 @@
 
       " Theme
       set termguicolors
-      set bg=dark
-      colorscheme quiet
-      highlight Keyword gui=bold
-      highlight Comment gui=italic
-      highlight Constant guifg=#999999
-      highlight NormalFloat guibg=#333333
 
+      set bg=dark
+      let g:bones_compat = 1
+      colorscheme zenbones
+
+      function! MyHighlights() abort
+        " highlight Normal         guibg=none
+        highlight Comment        gui=italic
+      endfunction
+
+      augroup MyColors
+        autocmd!
+        autocmd ColorScheme * call MyHighlights()
+      augroup END
+
+      call MyHighlights()
+
+      autocmd BufEnter * TSEnable highlight indent
+      autocmd BufEnter * TSBufEnable highlight indent
+
+      luafile ${vim/theming.lua}
       luafile ${vim/keymap.lua}
       luafile ${vim/completion.lua}
       luafile ${vim/formatting.lua}
@@ -110,7 +157,8 @@
       luafile ${vim/lsp.lua}
     '';
     extraPackages = with pkgs; [
-        lua-language-server
+      lua-language-server
+      jdt-language-server
     ];
   };
 
@@ -118,5 +166,5 @@
     {
       "enable_build_on_save": true
     }
-    '';
+  '';
 }

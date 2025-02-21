@@ -10,4 +10,3 @@
     --italic-text=always
   '';
 }
-

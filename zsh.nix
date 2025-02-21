@@ -6,6 +6,7 @@
 }:
 {
   programs.fzf.enable = true;
+  programs.fzf.defaultOptions = [ "--color=16" ];
   programs.zsh = {
     defaultKeymap = "emacs";
     enable = true;
@@ -22,7 +23,6 @@
       gdc = "git diff --cached";
       gps = "git push";
       gpl = "git pull";
-      gh = "git log --graph --pretty=oneline --abbrev-commit";
       copy-to-clipboard = "xclip -selection clipboard";
     };
     envExtra = ''
@@ -31,10 +31,6 @@
         . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
       fi
       # End Nix
-
-      [ -f "/Users/owi/.ghcup/env" ] && source "/Users/owi/.ghcup/env" # ghcup-env
-
-      export DOCKER_HOST="unix://$HOME/.colima/docker.sock"
     '';
     initExtra = ''
       # For home-manager
@@ -49,18 +45,12 @@
 
       export PATH=$PATH:$HOME/.local/bin
 
-      # If you need to have llvm first in your PATH, run:
-      export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
-      export PATH="$HOME/.cargo/bin:$PATH"
-
-      # For compilers to find llvm you may need to set:
-      export LDFLAGS="-L/opt/homebrew/opt/llvm/lib"
-      export CPPFLAGS="-I/opt/homebrew/opt/llvm/include"
       export EDITOR="nvim"
       export VISUAL="nvim"
       alias vim=nvim
 
       export FZF_DEFAULT_COMMAND='rg --files --hidden'
+      export FZF_DEFAULT_OPTS='--color=16'
     '';
 
     prezto = {

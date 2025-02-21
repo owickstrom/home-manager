@@ -23,7 +23,7 @@
   ];
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
-  # news.display = "silent";
+  news.display = "silent";
 
   nix = {
     gc = {
@@ -74,6 +74,7 @@
       tmux
       jq
       ripgrep
+      fd
       xclip
       nixfmt-rfc-style
       tree
@@ -82,8 +83,15 @@
       bat
       delta
       difftastic
-      # pandoc
+      pandoc
+
+      # Python
+      python313
       poetry
+      uv
+      pyright
+      python313Packages.black
+
       shellcheck
       nodejs
       iosevka-bin
@@ -91,11 +99,12 @@
       yarn
       haskell-language-server
       nix-tree
-      (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
-      pkgs.inter
-      pkgs.commit-mono
-      pkgs.input-fonts
-      pkgs.lazygit
+      pkgs.jetbrains-mono
+      pkgs.nerd-fonts.jetbrains-mono
+      inter
+      lazygit
+      firefox
+      ollama
     ];
 
   home.activation = {
