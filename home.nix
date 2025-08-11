@@ -92,7 +92,6 @@
 
     # Tools
     shellcheck
-    ollama
     btop
     tmux
     jq

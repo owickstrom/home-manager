@@ -47,6 +47,8 @@ lsp.jdtls.setup({
 
 lsp.clangd.setup {}
 
+lsp.ts_ls.setup {}
+
 vim.api.nvim_create_autocmd('BufEnter', {
   pattern = '',
   command = 'TSEnable highlight'

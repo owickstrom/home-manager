@@ -1,3 +1,5 @@
 vim.opt.completeopt = "menu,menuone,noinsert,preview"
 
-require("fzf-lua").setup({ winopts = { backdrop = false, border = 'double' } })
+local fzf = require("fzf-lua")
+fzf.setup({ winopts = { backdrop = false, border = 'double' } })
+fzf.register_ui_select()

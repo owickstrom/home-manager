@@ -31,6 +31,10 @@
         . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
       fi
       # End Nix
+
+      if [ -e "$HOME/.cargo/env" ]; then
+        . "$HOME/.cargo/env"
+      fi
     '';
     initExtra = ''
       # For home-manager
