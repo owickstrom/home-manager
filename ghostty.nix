@@ -44,7 +44,7 @@
     # in bytes:
     scrollback-limit = 10000000
     link-url = true
-    fullscreen = true
+    fullscreen = false
     title = 
     working-directory = home
 

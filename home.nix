@@ -63,9 +63,6 @@
   #   keep-outputs = true
 
   home.packages = with pkgs; [
-    # System
-    firefox
-
     # Git
     difftastic
 
@@ -101,6 +98,10 @@
     awscli
     bat
     pandoc
+
+    # Zig
+    zig
+    zls
   ];
 
   home.activation = {
