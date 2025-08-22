@@ -8,12 +8,14 @@
 
   # Based off `ghostty +show-config --default --docs`
   xdg.configFile."ghostty/config".text = ''
-    font-family = JetBrains Mono
-    font-style = Medium
-    font-size = 9
-    font-thicken = true
+    font-family = "TX-02"
+    font-size = 11
+    font-style = "Medium SemiCondensed"
+    font-style-bold = "Bold SemiCondensed"
+    font-style-italic = "Medium SemiCondensed Oblique"
+    font-style-bold-italic = "Bold SemiCondensed Oblique"
 
-    adjust-cell-height = 15%
+    adjust-cell-height = 20%
 
     theme = dark:zenwritten_dark,light:zenwritten_light
     selection-invert-fg-bg = false
