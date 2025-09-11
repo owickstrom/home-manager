@@ -36,7 +36,7 @@
         . "$HOME/.cargo/env"
       fi
     '';
-    initExtra = ''
+    initContent = ''
       # For home-manager
       export NIX_PATH=$HOME/.nix-defexpr/channels''${NIX_PATH:+:}$NIX_PATH
 
@@ -48,6 +48,7 @@
       [ -f "/opt/homebrew/bin/brew" ] && eval "$(/opt/homebrew/bin/brew shellenv)"
 
       export PATH=$PATH:$HOME/.local/bin
+      export PATH="$HOME/.bun/bin:$PATH"
 
       export EDITOR="nvim"
       export VISUAL="nvim"

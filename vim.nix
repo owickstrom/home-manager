@@ -8,7 +8,7 @@
 let
   auto-dark-mode =
     let
-      version = "02ef9553e2a1d6e861bc6955d58ce5883d28a6ad";
+      version = "e300259ec777a40b4b9e3c8e6ade203e78d15881";
     in
     pkgs.vimUtils.buildVimPlugin {
       inherit version;
