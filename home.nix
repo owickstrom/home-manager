@@ -18,6 +18,7 @@
     ./vim.nix
     ./tmux.nix
     ./ctags.nix
+    ./regolith.nix
 
     ./idea.nix
   ];
@@ -86,6 +87,8 @@
     jetbrains-mono
     nerd-fonts.jetbrains-mono
     inter
+    alegreya
+    alegreya-sans
 
     # Tools
     shellcheck

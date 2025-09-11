@@ -1,0 +1,24 @@
+regolith.wallpaper.color.primary: #000000
+regolith.wallpaper.options: zoom
+
+wm.font: TX-02 SemiCondensed Medium 10
+wm.bar.font: TX-02 SemiCondenseded Medium 10
+wm.gaps.inner.size: 10
+wm.bar.mode: hide
+wm.window.border.size: 3
+
+gtk.document_font_name: Alegreya Sans 10
+gtk.font_name: Alegreya Sans 10
+gtk.monospace_font_name: TX-02 SemiCondenseded Medium
+
+gnome.terminal.background-transparency-percent: 3
+gnome.terminal.use-transparent-background: true
+gnome.terminal.font: TX-02 SemiCondensed Medium 10
+gnome.terminal.scrollbar: never
+gnome.terminal.line-height: 1.2
+
+regolith.wallpaper.file: /home/owi/.config/home-manager/bg.jpeg
+regolith.lockscreen.wallpaper.file: /home/owi/.config/home-manager/bg.jpeg
+
+!regolith.look.path: /usr/share/regolith-look/ayu
+regolith.look.path: /usr/share/regolith-look/ayu-dark
