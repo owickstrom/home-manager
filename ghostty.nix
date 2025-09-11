@@ -9,7 +9,7 @@
   # Based off `ghostty +show-config --default --docs`
   xdg.configFile."ghostty/config".text = ''
     font-family = "TX-02"
-    font-size = 11
+    font-size = 10
     font-style = "Medium SemiCondensed"
     font-style-bold = "Bold SemiCondensed"
     font-style-italic = "Medium SemiCondensed Oblique"
