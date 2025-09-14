@@ -1,0 +1,116 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run the `zed: Open Default Settings` command
+// from the command palette
+{
+  "agent": {
+    "default_model": {
+      "provider": "ollama",
+      "model": "gpt-oss:20b"
+    }
+  },
+  "tab_bar": {
+    "show": true
+  },
+  "cursor_blink": false,
+  "vim_mode": true,
+  "ui_font_size": 13,
+  "ui_font_family": "Inter",
+  "buffer_font_size": 12,
+  "buffer_font_family": "TX-02",
+  "buffer_font_weight": 500,
+  "buffer_font_features": {
+    "calt": true,
+    "liga": true
+  },
+  "buffer_line_height": "comfortable",
+  "theme": {
+    "mode": "dark",
+    "light": "Github Light Tritanopia",
+    "dark": "Github Dark Tritanopia"
+  },
+  "git": {
+    "git_gutter": "tracked_files",
+    "inline_blame": {
+      "enabled": false
+    }
+  },
+  "terminal": {
+    "shell": {
+      "program": "zsh"
+    },
+    "option_as_meta": true,
+    "font_family": "TX-02",
+    "font_weight": 500,
+    "line_height": "comfortable",
+    "font_features": {
+      "calt": false,
+      "liga": false
+    }
+  },
+  "auto_signature_help": false,
+  "wrap_guides": [
+    100
+  ],
+  "preferred_line_length": 100,
+  "show_wrap_guides": true,
+  "load_direnv": "shell_hook",
+  "lsp": {
+    "zls": {
+      "binary": {}
+    },
+    "biome": {
+      "enable_lsp_tasks": true
+    },
+    "jdtls": {
+      "settings": {
+        "java": {
+          "format": {
+            "enabled": true,
+            "settings": {
+              "url": "file:///home/owi/projects/tigerbeetle/tigerbeetle/src/clients/java/eclipse-formatter.xml",
+              "profile": "tigerbeetle-java-style"
+            }
+          },
+          "configuration": {
+            "updateBuildConfiguration": "interactive"
+          },
+          "implementationsCodeLens": {
+            "enabled": true
+          },
+          "referencesCodeLens": {
+            "enabled": true
+          },
+          "references": {
+            "includeDecompiledSources": true
+          },
+          "signatureHelp": {
+            "enabled": true
+          },
+          "completion": {
+            "guessMethodArguments": true
+          }
+        }
+      }
+    }
+  },
+  "file_types": {
+    "HTML": [
+      "tera"
+    ]
+  },
+  "formatter": [
+    {
+      "language_server": {
+        "name": "biome"
+      }
+    },
+    {
+      "language_server": {}
+    }
+  ]
+}

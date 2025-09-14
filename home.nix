@@ -11,6 +11,7 @@
     ./skhd.nix
     ./alacritty.nix
     ./ghostty.nix
+    ./zed.nix
     ./bat.nix
 
     ./zsh.nix
@@ -64,6 +65,8 @@
   #   keep-outputs = true
 
   home.packages = with pkgs; [
+    firefox
+
     # Git
     difftastic
 
