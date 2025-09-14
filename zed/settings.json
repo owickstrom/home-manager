@@ -30,8 +30,8 @@
   "buffer_line_height": "comfortable",
   "theme": {
     "mode": "dark",
-    "light": "Github Light Tritanopia",
-    "dark": "Github Dark Tritanopia"
+    "light": "Kanagawa Lotus",
+    "dark": "Kanagawa Dragon"
   },
   "git": {
     "git_gutter": "tracked_files",

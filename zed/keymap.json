@@ -9,7 +9,8 @@
   {
     "context": "Workspace",
     "bindings": {
-      // "shift shift": "file_finder::Toggle"
+      "space space": "file_finder::Toggle",
+      "space b b": "tab_switcher::Toggle"
     }
   },
   {
@@ -17,16 +18,24 @@
     "bindings": {
       // "j k": ["workspace::SendKeystrokes", "escape"]
       "alt-n": "editor::GoToDiagnostic",
-      "alt-p": "editor::GoToPrevDiagnostic"
+      "alt-p": "editor::GoToPreviousDiagnostic"
     }
   },
-
   {
     "context": "Terminal",
     "bindings": {
-      "ctrl-b": ["terminal::SendKeystroke", "ctrl-b"],
-      "ctrl-p": ["terminal::SendKeystroke", "ctrl-p"],
-      "ctrl-n": ["terminal::SendKeystroke", "ctrl-n"]
+      "ctrl-b": [
+        "terminal::SendKeystroke",
+        "ctrl-b"
+      ],
+      "ctrl-p": [
+        "terminal::SendKeystroke",
+        "ctrl-p"
+      ],
+      "ctrl-n": [
+        "terminal::SendKeystroke",
+        "ctrl-n"
+      ]
     }
   }
 ]
