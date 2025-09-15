@@ -23,19 +23,19 @@ in
 
     [font.bold]
     family = "TX-02"
-    style = "SemiCondensed ExtraBold"
+    style = "ExtraBold SemiCondensed"
 
     [font.bold_italic]
     family = "TX-02"
-    style = "SemiCondensed ExtraBold Italic"
+    style = "ExtraBold Italic SemiCondensed"
 
     [font.italic]
     family = "TX-02"
-    style = "SemiCondensed Italic"
+    style = "Italic SemiCondensed"
 
     [font.normal]
     family = "TX-02"
-    style = "SemiCondensed Medium"
+    style = "Medium SemiCondensed"
 
     [[keyboard.bindings]]
     chars = "\u001Bb"
