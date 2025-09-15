@@ -132,7 +132,7 @@ in
 
       set bg=dark
       let g:bones_compat = 1
-      colorscheme zenbones
+      colorscheme kanagawabones
 
       function! MyHighlights() abort
         " highlight Normal         guibg=none

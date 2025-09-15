@@ -11,8 +11,8 @@ gtk.document_font_name: Alegreya Sans 10
 gtk.font_name: Alegreya Sans 10
 gtk.monospace_font_name: TX-02 SemiCondenseded Medium
 
-gnome.terminal.background-transparency-percent: 3
-gnome.terminal.use-transparent-background: true
+gnome.terminal.background-transparency-percent: 0
+gnome.terminal.use-transparent-background: false
 gnome.terminal.font: TX-02 SemiCondensed Medium 10
 gnome.terminal.scrollbar: never
 gnome.terminal.line-height: 1.2

@@ -6,35 +6,36 @@
 }:
 let
   themes = (
-    fetchTarball "https://github.com/alacritty/alacritty-theme/archive/cb786242b6f5e00a57e2f541e7bf1115f3950650.tar.gz"
+    fetchTarball "https://github.com/alacritty/alacritty-theme/archive/40e0c6c8690d1c62f58718fcef8a48eb6077740b.tar.gz"
   );
 in
 {
   xdg.configFile."alacritty/alacritty.toml".text = ''
 
+    [general]
     import = [
-      "${themes}/themes/atom_one_light.toml"
+      "${themes}/themes/kanagawa_wave.toml"
     ]
 
     [font]
-    size = 10.0
-    offset.y = 5
+    size = 9.0
+    offset.y = 8
 
     [font.bold]
-    family = "JetBrainsMono Nerd Font"
-    style = "ExtraBold"
+    family = "TX-02"
+    style = "SemiCondensed ExtraBold"
 
     [font.bold_italic]
-    family = "JetBrainsMono Nerd Font"
-    style = "ExtraBold Italic"
+    family = "TX-02"
+    style = "SemiCondensed ExtraBold Italic"
 
     [font.italic]
-    family = "JetBrainsMono Nerd Font"
-    style = "Italic"
+    family = "TX-02"
+    style = "SemiCondensed Italic"
 
     [font.normal]
-    family = "JetBrainsMono Nerd Font"
-    style = "Medium"
+    family = "TX-02"
+    style = "SemiCondensed Medium"
 
     [[keyboard.bindings]]
     chars = "\u001Bb"
@@ -54,7 +55,7 @@ in
     history = 100000
     multiplier = 3
 
-    [shell]
+    [terminal.shell]
     args = ["-l"]
     program = "${pkgs.zsh}/bin/zsh"
 
