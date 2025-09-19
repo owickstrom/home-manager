@@ -18,7 +18,7 @@ cursor-style = block
 cursor-style-blink = false
 cursor-click-to-move = true
 
-mouse-hide-while-typing = false
+mouse-hide-while-typing = true
 mouse-shift-capture = false
 mouse-scroll-multiplier = 1
 
@@ -145,5 +145,5 @@ bold-is-bright = false
 
 term = xterm-ghostty
 
-#keybind = ctrl+enter=toggle_fullscreen
+keybind = f11=toggle_fullscreen
 keybind = ctrl+enter=ignore

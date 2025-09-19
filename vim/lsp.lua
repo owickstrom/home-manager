@@ -51,6 +51,8 @@ lsp.ts_ls.setup {}
 
 lsp.biome.setup {}
 
+lsp.buf.setup {}
+
 vim.api.nvim_create_autocmd('BufEnter', {
   pattern = '',
   command = 'TSEnable highlight'
