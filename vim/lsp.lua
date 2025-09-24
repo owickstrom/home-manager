@@ -12,7 +12,11 @@ lsp.lua_ls.setup {
 lsp.rust_analyzer.setup {
   -- Server-specific settings. See `:help lspconfig-setup`
   settings = {
-    ['rust-analyzer'] = {},
+    ['rust-analyzer'] = {
+      cargo = {
+        loadOutDirsFromCheck = true,
+      },
+    },
   },
 }
 lsp.pyright.setup {}
