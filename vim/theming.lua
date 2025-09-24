@@ -1,6 +1,6 @@
 require('auto-dark-mode').setup({
   update_interval = 1000,
-  fallback = "dark",
+  fallback = "light",
   set_dark_mode = function()
     vim.api.nvim_set_option_value('background', 'dark', {})
   end,

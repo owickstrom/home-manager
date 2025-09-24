@@ -9,7 +9,7 @@ font-style-bold-italic = "Bold SemiCondensed Oblique"
 
 adjust-cell-height = 20%
 
-theme = dark:zenwritten_dark,light:zenwritten_light
+theme = dark:Zenwritten Light
 selection-invert-fg-bg = false
 minimum-contrast = 1
 
@@ -138,7 +138,7 @@ gtk-single-instance = desktop
 gtk-tabs-location = top
 gtk-wide-tabs = false
 
-gtk-adwaita = true
+# gtk-adwaita = true
 
 desktop-notifications = true
 bold-is-bright = false
