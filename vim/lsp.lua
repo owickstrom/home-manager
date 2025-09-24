@@ -73,14 +73,14 @@ for _, method in ipairs({ 'textDocument/diagnostic', 'workspace/diagnostic' }) d
   end
 end
 
-require("copilot").setup({
-  suggestion = {
-    enabled = true,
-    auto_trigger = true,
-  },
-  filetypes = {
-    ["*"] = true,
-  },
-})
+-- require("copilot").setup({
+--   suggestion = {
+--     enabled = true,
+--     auto_trigger = true,
+--   },
+--   filetypes = {
+--     ["*"] = true,
+--   },
+-- })
 
-require("CopilotChat").setup {}
+-- require("CopilotChat").setup {}
