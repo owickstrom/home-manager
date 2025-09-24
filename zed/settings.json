@@ -29,9 +29,9 @@
   },
   "buffer_line_height": "comfortable",
   "theme": {
-    "mode": "dark",
-    "light": "Kanagawa Lotus",
-    "dark": "Kanagawa Dragon"
+    "mode": "system",
+    "light": "Github Light",
+    "dark": "Github Dark"
   },
   "git": {
     "git_gutter": "tracked_files",
