@@ -20,6 +20,7 @@
     ./tmux.nix
     ./ctags.nix
     ./regolith.nix
+    ./gammastep.nix
 
     ./idea.nix
   ];
