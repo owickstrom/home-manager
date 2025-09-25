@@ -28,11 +28,11 @@ let
     esac
 
     # Reload themes in Regolith, Ghostty, and any open Neovim instances.
-    regolith-look refresh > /dev/null
     killall -SIGUSR2 ghostty
     for addr in /tmp/*.nvim.pipe; do
         nvim --server $addr --remote-send ":set bg=$1<CR>"
     done
+    regolith-look refresh &> /dev/null
 
     echo "Switched to $1 theme"
   '';
