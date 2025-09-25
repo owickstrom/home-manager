@@ -5,22 +5,6 @@
   ...
 }:
 
-let
-  auto-dark-mode =
-    let
-      version = "e300259ec777a40b4b9e3c8e6ade203e78d15881";
-    in
-    pkgs.vimUtils.buildVimPlugin {
-      inherit version;
-      pname = "auto-dark-mode-nvim";
-      src = pkgs.fetchFromGitHub {
-        owner = "f-person";
-        repo = "auto-dark-mode.nvim";
-        rev = version;
-        hash = "sha256-PhhOlq4byctWJ5rLe3cifImH56vR2+k3BZGDZdQvjng=";
-      };
-    };
-in
 {
   programs.neovim = {
     enable = true;
@@ -28,7 +12,6 @@ in
     vimdiffAlias = true;
     defaultEditor = true;
     plugins = with pkgs.vimPlugins; [
-      auto-dark-mode
       # lsp/langs
       nvim-lspconfig
       (nvim-treesitter.withPlugins (p: [

@@ -10,20 +10,26 @@ let
         light)
             gsettings set org.gnome.desktop.interface gtk-theme "Adwaita"
             gsettings set org.gnome.desktop.interface color-scheme "prefer-light"
-            regolith-look set ayu
-            echo "Switched to light theme"
+            sed -i 's/ayu-dark$/ayu/' ~/.config/home-manager/regolith/Xresources
+            sed -i 's/Dark/Light/' ~/.config/home-manager/ghostty/config
+            sed -i 's/bg=dark/bg=light/' ~/.config/home-manager/vim/init.vim
             ;;
         dark)
             gsettings set org.gnome.desktop.interface gtk-theme "Adwaita-dark"
             gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
-            regolith-look set ayu-dark
-            echo "Switched to dark theme"
+            sed -i 's/ayu$/ayu-dark/' ~/.config/home-manager/regolith/Xresources
+            sed -i 's/Light/Dark/' ~/.config/home-manager/ghostty/config
+            sed -i 's/bg=light/bg=dark/' ~/.config/home-manager/vim/init.vim
             ;;
         *)
             echo "Invalid argument. Use 'light' or 'dark'"
             exit 1
             ;;
     esac
+
+    regolith-look refresh
+    killall -SIGUSR2 ghostty
+    echo "Switched to $1 theme"
   '';
 in
 {

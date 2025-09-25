@@ -71,7 +71,7 @@ set grepformat=%f:%l:%c:%m
 " Theme
 set termguicolors
 
-set bg=light
+set bg=dark
 let g:bones_compat = 1
 colorscheme zenwritten
 
@@ -90,7 +90,6 @@ call MyHighlights()
 autocmd BufEnter * TSEnable highlight indent
 autocmd BufEnter * TSBufEnable highlight indent
 
-luafile /home/owi/.config/home-manager/vim/theming.lua
 luafile /home/owi/.config/home-manager/vim/keymap.lua
 luafile /home/owi/.config/home-manager/vim/completion.lua
 luafile /home/owi/.config/home-manager/vim/formatting.lua
