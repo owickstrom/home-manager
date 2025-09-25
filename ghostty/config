@@ -1,7 +1,7 @@
 # Based off `ghostty +show-config --default --docs`
 # vim: set ft=cfg:
 font-family = "TX-02"
-font-size = 10
+font-size = 9
 font-style = "Medium SemiCondensed"
 font-style-bold = "Bold SemiCondensed"
 font-style-italic = "Medium SemiCondensed Oblique"
