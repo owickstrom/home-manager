@@ -47,6 +47,10 @@
       lua-language-server
       jdt-language-server
     ];
+    extraWrapperArgs = [
+      "--add-flags"
+      "--listen /tmp/$RANDOM.nvim.pipe"
+    ];
   };
 
   xdg.configFile."zls.json".text = ''

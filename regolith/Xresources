@@ -21,4 +21,4 @@ regolith.wallpaper.file: /home/owi/.config/home-manager/bg.jpeg
 regolith.lockscreen.wallpaper.file: /home/owi/.config/home-manager/bg.jpeg
 
 !regolith.look.path: /usr/share/regolith-look/ayu
-regolith.look.path: /usr/share/regolith-look/ayu-dark
+regolith.look.path: /usr/share/regolith-look/ayu

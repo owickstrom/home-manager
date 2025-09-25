@@ -8,15 +8,15 @@ let
 
     case "$1" in
         light)
-            gsettings set org.gnome.desktop.interface gtk-theme "Adwaita"
-            gsettings set org.gnome.desktop.interface color-scheme "prefer-light"
+            gsettings set org.gnome.desktop.interface gtk-theme "Adwaita" &> /dev/null
+            gsettings set org.gnome.desktop.interface color-scheme "prefer-light" &> /dev/null
             sed -i 's/ayu-dark$/ayu/' ~/.config/home-manager/regolith/Xresources
             sed -i 's/Dark/Light/' ~/.config/home-manager/ghostty/config
             sed -i 's/bg=dark/bg=light/' ~/.config/home-manager/vim/init.vim
             ;;
         dark)
-            gsettings set org.gnome.desktop.interface gtk-theme "Adwaita-dark"
-            gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
+            gsettings set org.gnome.desktop.interface gtk-theme "Adwaita-dark" &> /dev/null
+            gsettings set org.gnome.desktop.interface color-scheme "prefer-dark" &> /dev/null
             sed -i 's/ayu$/ayu-dark/' ~/.config/home-manager/regolith/Xresources
             sed -i 's/Light/Dark/' ~/.config/home-manager/ghostty/config
             sed -i 's/bg=light/bg=dark/' ~/.config/home-manager/vim/init.vim
@@ -27,8 +27,13 @@ let
             ;;
     esac
 
-    regolith-look refresh
+    # Reload themes in Regolith, Ghostty, and any open Neovim instances.
+    regolith-look refresh > /dev/null
     killall -SIGUSR2 ghostty
+    for addr in /tmp/*.nvim.pipe; do
+        nvim --server $addr --remote-send ":set bg=$1<CR>"
+    done
+
     echo "Switched to $1 theme"
   '';
 in

@@ -71,7 +71,7 @@ set grepformat=%f:%l:%c:%m
 " Theme
 set termguicolors
 
-set bg=dark
+set bg=light
 let g:bones_compat = 1
 colorscheme zenwritten
 
