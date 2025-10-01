@@ -66,7 +66,9 @@
   #   keep-outputs = true
 
   home.packages = with pkgs; [
+    # Generally useful apps
     firefox
+    papers
 
     # Git
     difftastic
