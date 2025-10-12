@@ -35,6 +35,7 @@
       # other
       conform-nvim
       fzf-lua
+      lush-nvim
       zenbones-nvim
       goyo
       copilot-lua

@@ -10,7 +10,7 @@
     Service = {
       ExecStart = "${pkgs.writeShellScript "gammastep-start" ''
         #!/run/current-system/sw/bin/bash
-        ${pkgs.gammastep}/bin/gammastep -ovv -l -l manual 59.19:18.4 -t 2000K:6500K
+        ${pkgs.gammastep}/bin/gammastep -vv -l 59.19:18.4 -t "6500:2500"
       ''}";
     };
   };

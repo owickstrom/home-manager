@@ -72,8 +72,8 @@ set grepformat=%f:%l:%c:%m
 set termguicolors
 
 set bg=light
-let g:bones_compat = 1
-colorscheme zenwritten
+let g:zenbones_darkness='stark'
+colorscheme zenbones
 
 function! MyHighlights() abort
   " highlight Normal         guibg=none
